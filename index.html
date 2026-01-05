@@ -29,7 +29,7 @@
             color: #ffd633 !important;
         }
         #hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg');
+            background-image: url('https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg');
             background-size: cover;
             background-position: center;
             height: 90vh;
@@ -39,6 +39,29 @@
             align-items: center;
             text-align: center;
             color: #fff;
+            position: relative;
+        }
+        #hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: pulseOverlay 5s infinite alternate ease-in-out;
+        }
+        @keyframes pulseOverlay {
+            0% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+        #hero > * {
+            position: relative;
+            z-index: 1;
         }
         #hero h2 {
             font-size: 3.5em;
@@ -76,6 +99,7 @@
         .project-card {
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #dee2e6;
+            animation: fadeInUp 1s ease-out;
         }
         .project-card:hover {
             transform: translateY(-10px);
@@ -410,7 +434,7 @@
             <h3 class="text-center mb-5">My Portfolio</h3>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card project-card">
+                    <div class="card project-card animate__animated animate__fadeInLeft">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#logoModal">
                             <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
                         </a>
@@ -422,7 +446,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card project-card">
+                    <div class="card project-card animate__animated animate__fadeInUp">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#posterModal">
                             <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="card-img-top" alt="Poster Art" loading="lazy">
                         </a>
@@ -434,7 +458,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card project-card">
+                    <div class="card project-card animate__animated animate__fadeInRight">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#digitalModal">
                             <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="card-img-top" alt="KFC ALL STARS GHOST PEPPER" loading="lazy">
                         </a>
@@ -458,7 +482,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card project-card">
+                    <div class="card project-card animate__animated animate__fadeInLeft">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#techniciansModal">
                             <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="card-img-top" alt="Technicians from MCHS LL Campus" loading="lazy">
                         </a>
@@ -470,7 +494,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card project-card">
+                    <div class="card project-card animate__animated animate__fadeInRight">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#randomEditsModal">
                             <img src="https://i.ibb.co/SDDHSG0B/dmwdp-jpg2-062624.jpg" class="card-img-top" alt="Random Photo Edits" loading="lazy">
                         </a>
