@@ -247,6 +247,70 @@
                 max-width: 1140px;
             }
         }
+        /* New styles for Skills section */
+        #skills {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        #skills .skill-card {
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        #skills .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        #skills .skill-icon {
+            font-size: 3em;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+        /* New styles for Testimonials section */
+        #testimonials {
+            background-color: #f9f9f9;
+        }
+        #testimonials .testimonial-card {
+            border: none;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        #testimonials .testimonial-card i {
+            color: #ffcc00;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        /* Back to top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            z-index: 1000;
+            padding: 10px 15px;
+            font-size: 1.2em;
+        }
+        /* Styles for new Technicians modal */
+        #techniciansModal .modal-header {
+            background-color: #1a1a1a;
+            color: #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+        }
+        #techniciansModal .modal-title {
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        #techniciansModal .carousel-item img {
+            border: 4px solid #ffcc00;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.5s ease;
+        }
+        #techniciansModal .carousel-item.active img {
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
@@ -261,7 +325,9 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -280,6 +346,42 @@
                 <h3 class="mb-4">About Me</h3>
                 <p>Hello! I'm Dynamité Graphix (real name: Dumisani Tukula), a passionate graphic designer based in Malawi. With a keen eye for detail and a love for creativity, I specialize in creating stunning visuals that captivate and engage. Whether it's logos, posters, or digital art, I bring a unique touch to every project. Let's turn your vision into reality!</p>
                 <a href="#" data-bs-toggle="modal" data-bs-target="#cvModal" class="btn btn-primary mt-3">View My CV</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <h3 class="text-center mb-5">My Skills</h3>
+        <div class="row g-4">
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-palette skill-icon"></i>
+                <h4>Graphic Design</h4>
+                <p>Expert in Adobe Photoshop, Illustrator, and InDesign for creating professional visuals.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-draw-polygon skill-icon"></i>
+                <h4>Digital Illustration</h4>
+                <p>Skilled in digital art tools to produce captivating illustrations and concepts.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-briefcase skill-icon"></i>
+                <h4>Branding & Identity</h4>
+                <p>Developing comprehensive brand strategies and visual identities for businesses.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-ad skill-icon"></i>
+                <h4>Poster & Flyer Design</h4>
+                <p>Creating eye-catching promotional materials for events and marketing.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-music skill-icon"></i>
+                <h4>Album Art</h4>
+                <p>Designing unique album covers and music-related graphics.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-hospital-user skill-icon"></i>
+                <h4>Specialized Projects</h4>
+                <p>Tailored designs for institutions like health sciences and education sectors.</p>
             </div>
         </div>
     </section>
@@ -336,9 +438,50 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4">
+                    <div class="card project-card">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#techniciansModal">
+                            <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="card-img-top" alt="Technicians from MCHS LL Campus" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Technicians from MCHS LL Campus</h4>
+                            <p class="card-text">Custom designs created for technicians at Malawi College of Health Sciences, Lilongwe Campus.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <p class="text-center mt-5">Most of my work is showcased on my Dynamité Graphix page on Facebook. Click the links above to see more!</p>
             <p class="text-center mt-3">You can also visit and admire my work at my personal portfolio website: <a href="https://drmarcus-dm.github.io/Dumisani-Tukula-s-Portfolio-/" target="_blank">Dumisani Tukula's Portfolio</a></p>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h3 class="text-center mb-5">What Clients Say</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Dynamité Graphix delivered an outstanding logo that perfectly captured our brand vision. Highly recommended!"</p>
+                        <p><strong>- Business Owner, Malawi</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The flyers designed for our event were eye-catching and professional. Great attention to detail!"</p>
+                        <p><strong>- Event Organizer</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Fantastic branding work that elevated our company's image. Creative and reliable designer."</p>
+                        <p><strong>- Brand Manager</strong></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -453,7 +596,7 @@
                             <div class="carousel-item active">
                                 <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="d-block w-100 img-fluid" alt="KFC Ghost pepper flyer">
                             </div>
-                            <div class="carousel-item active">
+                            <div class="carousel-item">
                                 <img src="https://i.ibb.co/sprtQB6F/KFCBRANDBYDMX-032255.jpg" class="d-block w-100 img-fluid" alt="KFC Ghost pepper flyer">
                             </div>
                             <div class="carousel-item">
@@ -513,6 +656,36 @@
         </div>
     </div>
 
+    <!-- Technicians from MCHS LL Campus Modal -->
+    <div class="modal fade" id="techniciansModal" tabindex="-1" aria-labelledby="techniciansModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="techniciansModalLabel">Technicians from MCHS LL Campus</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="techniciansCarouselModal" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="d-block w-100 img-fluid" alt="Technicians Image 1">
+                            </div>
+                            <!-- Add more carousel items here if additional images are available -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#techniciansCarouselModal" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#techniciansCarouselModal" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- CV Modal -->
     <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -532,6 +705,9 @@
         </div>
     </div>
 
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="btn btn-primary"><i class="fas fa-arrow-up"></i></a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -541,6 +717,21 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Back to top functionality
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
