@@ -3,286 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dynamité Graphix - Professional Graphic Designer Portfolio from Malawi. Specializing in logos, posters, and digital illustrations.">
-    <meta name="keywords" content="graphic designer, portfolio, Malawi, logos, posters, digital art">
+    <meta name="description" content="Dynamité Graphix - Futuristic Graphic Designer Portfolio from Malawi. Specializing in logos, posters, and digital illustrations with a cosmic twist.">
+    <meta name="keywords" content="graphic designer, portfolio, Malawi, logos, posters, digital art, futuristic design">
     <meta name="author" content="Dumisani Tukula">
-    <title>Dynamité Graphix - Graphic Designer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Dynamité Graphix - Futuristic Graphic Designer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
         .navbar {
-            background-color: #121212 !important; /* Upgraded to a darker shade for better contrast */
+            background-color: rgba(18, 18, 18, 0.8) !important;
+            backdrop-filter: blur(10px);
         }
         .navbar-brand, .nav-link {
-            color: #fff !important;
+            color: #00ffcc !important;
             font-weight: 600;
+            text-shadow: 0 0 5px #00ffcc;
         }
         .nav-link:hover {
-            color: #ffd633 !important; /* Slightly brighter yellow for hover */
+            color: #ff00ff !important;
+            text-shadow: 0 0 10px #ff00ff;
         }
         #hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg'); /* Enhanced overlay for better text visibility */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg');
             background-size: cover;
             background-position: center;
-            height: 90vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: #fff;
-        }
-        #hero h2 {
-            font-size: 3.5em;
-            font-weight: 800;
-            animation: fadeIn 2s ease-in-out;
-        }
-        #hero p {
-            font-size: 1.8em;
-            margin: 15px 0;
-        }
-        .btn-primary {
-            background-color: #ffd633; /* Upgraded primary button color for vibrancy */
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            font-weight: 600;
-            transition: transform 0.3s, background-color 0.3s;
-            border-radius: 5px;
-        }
-        .btn-primary:hover {
-            transform: scale(1.05);
-            background-color: #ffc200; /* Darker hover shade */
-        }
-        section {
-            padding: 80px 0;
-        }
-        #about {
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-        #portfolio {
-            background-color: #f9f9f9;
-        }
-        .project-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        .project-card .card-img-top {
-            height: 250px;
-            object-fit: cover;
-        }
-        #contact {
-            background-color: #121212; /* Upgraded to match navbar */
-            color: #fff;
-        }
-        #contact a {
-            color: #ffd633;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-        }
-        #contact a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #282828; /* Upgraded footer color for depth */
-            color: #fff;
-            padding: 30px 0;
-            font-size: 0.9em;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 768px) {
-            #hero h2 { font-size: 2.5em; }
-            #hero p { font-size: 1.4em; }
-            section { padding: 60px 0; }
-        }
-        /* Upgrades: Improved button spacing and accessibility */
-        .btn-link {
-            margin: 5px;
-        }
-        img {
-            loading: lazy;
-        }
-        /* Additional upgrades: Smooth transitions and better modal styling */
-        .modal-content {
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .carousel-item img {
-            max-height: 80vh;
-            object-fit: contain;
-            margin: 0 auto;
-        }
-        .modal-body {
-            padding: 0;
-            text-align: center;
-        }
-        /* Ensure icons are accessible */
-        i {
-            speak: none; /* For screen readers */
-        }
-        /* Upgrades for I'm Awaken section to make it special */
-        .awaken-card {
-            border: 2px solid #ffd633;
-            box-shadow: 0 0 20px rgba(255, 214, 51, 0.5); /* Adjusted for new color */
-            background-color: #fffcf2;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        }
-        .awaken-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 12px 24px rgba(255, 214, 51, 0.7);
-            border-color: #ffc200;
-        }
-        .awaken-card .card-title {
-            color: #ffd633;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .awaken-card .card-text {
-            font-style: italic;
-            color: #555;
-        }
-        #awakenModal .modal-header {
-            background-color: #121212;
-            color: #ffd633;
-            border-bottom: 2px solid #ffd633;
-        }
-        #awakenModal .modal-title {
-            font-weight: 800;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        #awakenModal .carousel-control-prev-icon,
-        #awakenModal .carousel-control-next-icon {
-            filter: invert(1) sepia(1) saturate(5) hue-rotate(30deg);
-        }
-        #awakenModal .carousel-item img {
-            border: 4px solid #ffd633;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease;
-        }
-        #awakenModal .carousel-item.active img {
-            transform: scale(1.02);
-        }
-        /* New styles for CV Modal to make it attractive and stylish */
-        #cvModal .modal-header {
-            background-color: #121212;
-            color: #ffd633;
-            border-bottom: 2px solid #ffd633;
-        }
-        #cvModal .modal-title {
-            font-weight: 800;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        #cvModal .modal-body {
-            padding: 20px;
-            background-color: #f9f9f9;
             position: relative;
         }
-        #cvModal .modal-body::before {
-            content: "";
+        #hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1200px-Flag_of_Malawi.svg.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            z-index: 0;
+            background: radial-gradient(circle, rgba(0,255,204,0.3), rgba(255,0,255,0.3));
+            opacity: 0.5;
+            animation: pulse 5s infinite;
         }
-        #cvModal .modal-body > * {
-            position: relative;
-            z-index: 1;
+        #hero h2 {
+            font-size: 4em;
+            font-weight: 800;
+            text-shadow: 0 0 15px #00ffcc;
+            animation: fadeIn 2s ease-in-out, glow 2s infinite alternate;
         }
-        #cvModal .modal-body img {
-            max-height: 80vh;
-            object-fit: contain;
-            border: 4px solid #ffd633;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        #hero p {
+            font-size: 2em;
+            margin: 20px 0;
+            text-shadow: 0 0 10px #ff00ff;
         }
-        #cvModal .modal-body img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-        }
-        #cvModal .modal-footer {
-            border-top: 2px solid #ffd633;
-            background-color: #121212;
-        }
-        #cvModal .btn-primary {
-            background-color: #ffd633;
-            color: #121212;
+        .btn-primary {
+            background: linear-gradient(45deg, #00ffcc, #ff00ff);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
             font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(0,255,204,0.5);
         }
-        #cvModal .btn-secondary {
-            background-color: #333;
+        .btn-primary:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255,0,255,0.7);
+        }
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        #about {
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 0 20px rgba(0,255,204,0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+        #portfolio {
+            background: rgba(0,0,0,0.2);
+        }
+        .project-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #00ffcc;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 0 30px #ff00ff;
+        }
+        .project-card .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            filter: brightness(1.1);
+        }
+        #contact {
+            background: linear-gradient(135deg, #0f0c29, #302b63);
             color: #fff;
         }
-        /* General upgrades: Improved transitions and accessibility */
-        .modal-dialog {
-            max-width: 90%;
+        #contact a {
+            color: #00ffcc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            text-shadow: 0 0 5px #00ffcc;
         }
-        @media (min-width: 1200px) {
-            .modal-xl {
-                max-width: 1140px;
-            }
+        #contact a:hover {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
         }
-        /* New styles for Skills section */
+        footer {
+            background: rgba(40,40,40,0.8);
+            color: #00ffcc;
+            padding: 30px 0;
+            font-size: 0.9em;
+            text-shadow: 0 0 5px #00ffcc;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #00ffcc; }
+            to { text-shadow: 0 0 20px #ff00ff; }
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.5; }
+        }
+        @media (max-width: 768px) {
+            #hero h2 { font-size: 3em; }
+            #hero p { font-size: 1.5em; }
+            section { padding: 60px 0; }
+        }
+        .modal-content {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid #00ffcc;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0,255,204,0.5);
+        }
+        .modal-header {
+            background: linear-gradient(45deg, #0f0c29, #302b63);
+            border-bottom: 1px solid #ff00ff;
+            color: #00ffcc;
+        }
+        .carousel-item img {
+            border-radius: 15px;
+            box-shadow: 0 0 20px #ff00ff;
+            transition: transform 0.5s;
+        }
+        .carousel-item.active img {
+            transform: scale(1.05);
+        }
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            filter: brightness(2) hue-rotate(180deg);
+        }
         #skills {
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 0 20px rgba(0,255,204,0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
         }
         #skills .skill-card {
             text-align: center;
             padding: 20px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #ff00ff;
+            border-radius: 15px;
+            background: rgba(0,0,0,0.3);
         }
         #skills .skill-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px #00ffcc;
         }
         #skills .skill-icon {
             font-size: 3em;
-            color: #ffd633; /* Updated icon color */
+            color: #00ffcc;
             margin-bottom: 15px;
+            text-shadow: 0 0 10px #00ffcc;
         }
-        /* New styles for Testimonials section */
         #testimonials {
-            background-color: #f9f9f9;
+            background: rgba(0,0,0,0.2);
         }
         #testimonials .testimonial-card {
-            border: none;
-            background: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 15px #ff00ff;
             padding: 20px;
             text-align: center;
+            border-radius: 15px;
         }
         #testimonials .testimonial-card i {
-            color: #ffd633; /* Updated quote color */
+            color: #00ffcc;
             font-size: 1.5em;
             margin-bottom: 10px;
+            text-shadow: 0 0 5px #00ffcc;
         }
-        /* Back to top button */
         #back-to-top {
             position: fixed;
             bottom: 40px;
@@ -291,70 +230,55 @@
             z-index: 1000;
             padding: 10px 15px;
             font-size: 1.2em;
+            background: linear-gradient(45deg, #00ffcc, #ff00ff);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0,255,204,0.5);
         }
-        /* Styles for new Technicians modal */
-        #techniciansModal .modal-header {
-            background-color: #121212;
-            color: #ffd633;
-            border-bottom: 2px solid #ffd633;
+        #bible {
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 0 20px rgba(255,0,255,0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
         }
-        #techniciansModal .modal-title {
+        #bible .btn-primary {
+            margin-top: 20px;
+        }
+        #verse-display {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 15px;
+            box-shadow: 0 0 15px #00ffcc;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em;
+        }
+        .awaken-card {
+            border: 2px solid #00ffcc;
+            box-shadow: 0 0 20px rgba(0,255,204,0.5);
+            background: rgba(255,255,255,0.05);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .awaken-card:hover {
+            transform: translateY(-15px) scale(1.05) rotate(3deg);
+            box-shadow: 0 0 30px rgba(255,0,255,0.7);
+            border-color: #ff00ff;
+        }
+        .awaken-card .card-title {
+            color: #00ffcc;
             font-weight: 800;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px #00ffcc;
         }
-        #techniciansModal .carousel-item img {
-            border: 4px solid #ffd633;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease;
-        }
-        #techniciansModal .carousel-item.active img {
-            transform: scale(1.02);
-        }
-        /* New styles for Random Photo Edits modal */
-        #randomEditsModal .modal-header {
-            background-color: #121212;
-            color: #ffd633;
-            border-bottom: 2px solid #ffd633;
-        }
-        #randomEditsModal .modal-title {
-            font-weight: 800;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        #randomEditsModal .carousel-item img {
-            border: 4px solid #ffd633;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease;
-        }
-        #randomEditsModal .carousel-item.active img {
-            transform: scale(1.02);
-        }
-        /* Upgraded general modal headers for consistency */
-        .modal-header {
-            background-color: #121212;
-            color: #ffd633;
-            border-bottom: 2px solid #ffd633;
-        }
-        .modal-title {
-            font-weight: 800;
-        }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            filter: invert(1) sepia(1) saturate(5) hue-rotate(30deg);
-        }
-        .carousel-item img {
-            border: 4px solid #ffd633;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease;
-        }
-        .carousel-item.active img {
-            transform: scale(1.02);
+        .awaken-card .card-text {
+            font-style: italic;
+            color: #ddd;
         }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <div id="particles-js"></div>
 
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -368,6 +292,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bible">Bible Verses</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -376,8 +301,8 @@
     </nav>
 
     <section id="hero" class="text-center">
-        <h2 class="animate__animated animate__fadeInDown">Creative Graphic Designer from Malawi</h2>
-        <p class="animate__animated animate__fadeInUp">Bringing ideas to life with style and flair!</p>
+        <h2 class="animate__animated animate__fadeInDown">Futuristic Graphic Designer from Malawi</h2>
+        <p class="animate__animated animate__fadeInUp">Warping ideas into cosmic realities with neon flair!</p>
         <a href="#portfolio" class="btn btn-primary animate__animated animate__zoomIn">View My Work</a>
     </section>
 
@@ -385,7 +310,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
                 <h3 class="mb-4">About Me</h3>
-                <p>Hello! I'm Dynamité Graphix (real name: Dumisani Tukula), a passionate graphic designer based in Malawi. With a keen eye for detail and a love for creativity, I specialize in creating stunning visuals that captivate and engage. Whether it's logos, posters, or digital art, I bring a unique touch to every project. Let's turn your vision into reality!</p>
+                <p>Hello! I'm Dynamité Graphix (real name: Dumisani Tukula), a visionary graphic designer based in Malawi. With a cosmic eye for detail and a passion for futuristic creativity, I specialize in crafting stunning visuals that teleport and engage. From neon logos to holographic posters or digital galaxies, I infuse a unique quantum touch into every project. Let's launch your vision into the stars!</p>
                 <a href="#" data-bs-toggle="modal" data-bs-target="#cvModal" class="btn btn-primary mt-3">View My CV</a>
             </div>
         </div>
@@ -397,32 +322,32 @@
             <div class="col-md-4 skill-card">
                 <i class="fas fa-palette skill-icon"></i>
                 <h4>Graphic Design</h4>
-                <p>Expert in Adobe Photoshop, Illustrator, and InDesign for creating professional visuals.</p>
+                <p>Master of Adobe Photoshop, Illustrator, and InDesign for forging professional cosmic visuals.</p>
             </div>
             <div class="col-md-4 skill-card">
                 <i class="fas fa-draw-polygon skill-icon"></i>
                 <h4>Digital Illustration</h4>
-                <p>Skilled in digital art tools to produce captivating illustrations and concepts.</p>
+                <p>Adept in digital art tools to spawn captivating holographic illustrations and concepts.</p>
             </div>
             <div class="col-md-4 skill-card">
                 <i class="fas fa-briefcase skill-icon"></i>
                 <h4>Branding & Identity</h4>
-                <p>Developing comprehensive brand strategies and visual identities for businesses.</p>
+                <p>Crafting comprehensive brand strategies and neon visual identities for interstellar businesses.</p>
             </div>
             <div class="col-md-4 skill-card">
                 <i class="fas fa-ad skill-icon"></i>
                 <h4>Poster & Flyer Design</h4>
-                <p>Creating eye-catching promotional materials for events and marketing.</p>
+                <p>Generating eye-warping promotional materials for events and quantum marketing.</p>
             </div>
             <div class="col-md-4 skill-card">
                 <i class="fas fa-music skill-icon"></i>
                 <h4>Album Art</h4>
-                <p>Designing unique album covers and music-related graphics.</p>
+                <p>Designing unique album covers and music-related graphics with a futuristic vibe.</p>
             </div>
             <div class="col-md-4 skill-card">
                 <i class="fas fa-hospital-user skill-icon"></i>
                 <h4>Specialized Projects</h4>
-                <p>Tailored designs for institutions like health sciences and education sectors.</p>
+                <p>Tailored designs for institutions like health sciences and education sectors, with a sci-fi twist.</p>
             </div>
         </div>
     </section>
@@ -507,6 +432,18 @@
             <p class="text-center mt-5">Most of my work is showcased on my Dynamité Graphix page on Facebook. Click the links above to see more!</p>
             <p class="text-center mt-3">You can also visit and admire my work at my personal portfolio website: <a href="https://drmarcus-dm.github.io/Dumisani-Tukula-s-Portfolio-/" target="_blank">Dumisani Tukula's Portfolio</a></p>
         </div>
+    </section>
+
+    <section id="bible" class="container text-center">
+        <h3 class="mb-4">Bible Verse Generator</h3>
+        <p>Generate a random Bible verse and select a translation version to view it in.</p>
+        <select id="translation-select" class="form-select mb-3" style="max-width: 300px; margin: auto;">
+            <option value="kjv">King James Version (KJV)</option>
+            <option value="web">World English Bible (WEB)</option>
+            <option value="asv">American Standard Version (ASV)</option>
+        </select>
+        <button id="generate-verse" class="btn btn-primary">Generate Verse</button>
+        <div id="verse-display"></div>
     </section>
 
     <section id="testimonials">
@@ -693,7 +630,6 @@
                             <div class="carousel-item">
                                 <img src="https://placehold.co/800x600?text=Album+Artwork+3" class="d-block w-100 img-fluid" alt="Album Artwork 3">
                             </div>
-                            <!-- Add more carousel items as needed for additional artworks -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#awakenCarouselModal" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -723,7 +659,6 @@
                             <div class="carousel-item active">
                                 <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="d-block w-100 img-fluid" alt="Technicians Image 1">
                             </div>
-                            <!-- Add more carousel items here if additional images are available -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#techniciansCarouselModal" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -759,7 +694,6 @@
                             <div class="carousel-item">
                                 <img src="https://i.ibb.co/xq5jYRqY/15-PRO-MAX-20260102-182041-0000.png" class="d-block w-100 img-fluid" alt="Edited Photo 3">
                             </div>
-                            <!-- Add more carousel items here as needed for additional edited photos -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#randomEditsCarouselModal" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -799,6 +733,24 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00ffcc' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ff00ff', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -808,7 +760,6 @@
             });
         });
 
-        // Back to top functionality
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -821,6 +772,32 @@
         backToTop.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Bible Verse Generator
+        const books = ['genesis', 'exodus', 'leviticus', 'numbers', 'deuteronomy', 'joshua', 'judges', 'ruth', '1samuel', '2samuel', '1kings', '2kings', '1chronicles', '2chronicles', 'ezra', 'nehemiah', 'esther', 'job', 'psalms', 'proverbs', 'ecclesiastes', 'songofsolomon', 'isaiah', 'jeremiah', 'lamentations', 'ezekiel', 'daniel', 'hosea', 'joel', 'amos', 'obadiah', 'jonah', 'micah', 'nahum', 'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi', 'matthew', 'mark', 'luke', 'john', 'acts', 'romans', '1corinthians', '2corinthians', 'galatians', 'ephesians', 'philippians', 'colossians', '1thessalonians', '2thessalonians', '1timothy', '2timothy', 'titus', 'philemon', 'hebrews', 'james', '1peter', '2peter', '1john', '2john', '3john', 'jude', 'revelation'];
+        const generateButton = document.getElementById('generate-verse');
+        const translationSelect = document.getElementById('translation-select');
+        const verseDisplay = document.getElementById('verse-display');
+
+        generateButton.addEventListener('click', async () => {
+            const book = books[Math.floor(Math.random() * books.length)];
+            const chapter = Math.floor(Math.random() * 28) + 1; // Rough max chapters
+            const verse = Math.floor(Math.random() * 31) + 1; // Rough max verses
+            const translation = translationSelect.value;
+            const url = `https://bible-api.com/${book} ${chapter}:${verse}?translation=${translation}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.error) {
+                    verseDisplay.innerHTML = '<p>Verse not found. Try again!</p>';
+                } else {
+                    verseDisplay.innerHTML = `<strong>${data.reference}</strong><br>${data.text}`;
+                }
+            } catch (error) {
+                verseDisplay.innerHTML = '<p>Error fetching verse. Please try again later.</p>';
+            }
         });
     </script>
 </body>
