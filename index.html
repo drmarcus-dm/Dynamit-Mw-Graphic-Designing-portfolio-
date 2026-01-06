@@ -542,6 +542,286 @@ body {
         }
         #testimonials .testimonial-card {
             border: none;
+body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
+        }
+        .navbar {
+            background-color: #7D5A50 !important;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: #F5E8C7 !important;
+        }
+        #hero {
+            background-image: url('https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        #hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(125, 90, 80, 0.5); /* Adjusted to use primary color overlay */
+            animation: pulseOverlay 5s infinite alternate ease-in-out;
+        }
+        @keyframes pulseOverlay {
+            0% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+        #hero > * {
+            position: relative;
+            z-index: 1;
+        }
+        #hero h2 {
+            font-size: 3.5em;
+            font-weight: 800;
+            animation: fadeIn 2s ease-in-out;
+        }
+        #hero p {
+            font-size: 1.8em;
+            margin: 15px 0;
+        }
+        .btn-primary {
+            background-color: #7D5A50;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: transform 0.3s, background-color 0.3s;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background-color: #9E7777;
+        }
+        section {
+            padding: 80px 0;
+        }
+        #about {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        #portfolio {
+            background-color: #f8f9fa;
+        }
+        .project-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #dee2e6;
+            animation: fadeInUp 1s ease-out;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .project-card .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        #contact {
+            background-color: #7D5A50;
+            color: #fff;
+        }
+        #contact a {
+            color: #F5E8C7;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        #contact a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            #hero h2 { font-size: 2.5em; }
+            #hero p { font-size: 1.4em; }
+            section { padding: 60px 0; }
+        }
+        .btn-link {
+            margin: 5px;
+        }
+        img {
+            loading: lazy;
+        }
+        .modal-content {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .carousel-item img {
+            max-height: 80vh;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+        .modal-body {
+            padding: 0;
+            text-align: center;
+        }
+        i {
+            speak: none;
+        }
+        .awaken-card {
+            border: 2px solid #E5B299; /* Updated to secondary */
+            box-shadow: 0 0 20px rgba(229, 178, 153, 0.2);
+            background-color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .awaken-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(229, 178, 153, 0.3);
+            border-color: #9E7777; /* Hover to tertiary */
+        }
+        .awaken-card .card-title {
+            color: #7D5A50;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .awaken-card .card-text {
+            font-style: italic;
+            color: #555;
+        }
+        #awakenModal .modal-header {
+            background-color: #7D5A50;
+            color: #fff;
+            border-bottom: 2px solid #7D5A50;
+        }
+        #awakenModal .modal-title {
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        #awakenModal .carousel-control-prev-icon,
+        #awakenModal .carousel-control-next-icon {
+            filter: invert(1);
+        }
+        #awakenModal .carousel-item img {
+            border: 4px solid #E5B299; /* Updated to secondary */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.5s ease;
+        }
+        #awakenModal .carousel-item.active img {
+            transform: scale(1.02);
+        }
+        #cvModal .modal-header {
+            background-color: #7D5A50;
+            color: #fff;
+            border-bottom: 2px solid #7D5A50;
+        }
+        #cvModal .modal-title {
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        #cvModal .modal-body {
+            padding: 20px;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        #cvModal .modal-body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1200px-Flag_of_Malawi.svg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        #cvModal .modal-body > * {
+            position: relative;
+            z-index: 1;
+        }
+        #cvModal .modal-body img {
+            max-height: 80vh;
+            object-fit: contain;
+            border: 4px solid #E5B299; /* Updated to secondary */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #cvModal .modal-body img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        #cvModal .modal-footer {
+            border-top: 2px solid #7D5A50;
+            background-color: #7D5A50;
+        }
+        #cvModal .btn-primary {
+            background-color: #7D5A50;
+            color: #fff;
+            font-weight: 600;
+        }
+        #cvModal .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+        .modal-dialog {
+            max-width: 90%;
+        }
+        @media (min-width: 1200px) {
+            .modal-xl {
+                max-width: 1140px;
+            }
+        }
+        #skills {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        #skills .skill-card {
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+        }
+        #skills .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        #skills .skill-icon {
+            font-size: 3em;
+            color: #E5B299; /* Updated to secondary for subtle warmth */
+            margin-bottom: 15px;
+        }
+        #testimonials {
+            background-color: #f8f9fa;
+        }
+        #testimonials .testimonial-card {
+            border: none;
             background: #fff;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             padding: 20px;
@@ -549,7 +829,7 @@ body {
             border-radius: 10px;
         }
         #testimonials .testimonial-card i {
-            color: #CD1818; /* Updated to tertiary for emphasis */
+            color: #9E7777; /* Updated to tertiary for soft emphasis */
             font-size: 1.5em;
             margin-bottom: 10px;
         }
@@ -561,15 +841,15 @@ body {
             z-index: 1000;
             padding: 10px 15px;
             font-size: 1.2em;
-            background-color: #0F2C67;
+            background-color: #7D5A50;
             color: #fff;
         }
         #techniciansModal .modal-header,
         #randomEditsModal .modal-header,
         .modal-header {
-            background-color: #0F2C67;
+            background-color: #7D5A50;
             color: #fff;
-            border-bottom: 2px solid #0F2C67;
+            border-bottom: 2px solid #7D5A50;
         }
         .modal-title {
             font-weight: 800;
@@ -579,7 +859,7 @@ body {
             filter: invert(1);
         }
         .carousel-item img {
-            border: 4px solid #F3950D; /* Updated to secondary */
+            border: 4px solid #E5B299; /* Updated to secondary */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.5s ease;
