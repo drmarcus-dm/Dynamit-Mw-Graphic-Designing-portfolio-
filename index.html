@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,6 +121,15 @@
             #hero p { font-size: 1.4em; }
             section { padding: 60px 0; }
             .project-card .card-img-top { height: 200px; }
+            .portfolio-item {
+                width: 100%;
+            }
+            .card-body {
+                text-align: center;
+            }
+            .card-title, .card-text {
+                text-align: center;
+            }
         }
         .btn-link {
             margin: 5px;
@@ -323,9 +333,21 @@
         }
         /* Portfolio Grid */
         #portfolio .row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 20px;
+        }
+        .portfolio-item {
+            flex: 1 1 250px;
+            max-width: 100%;
+        }
+        @media (max-width: 768px) {
+            .portfolio-item {
+                flex: 0 0 100%;
+            }
+            .card {
+                width: 100%;
+            }
         }
         /* Filter Buttons */
         .filter-buttons {
@@ -896,3 +918,4 @@
     </script>
 </body>
 </html>
+```
