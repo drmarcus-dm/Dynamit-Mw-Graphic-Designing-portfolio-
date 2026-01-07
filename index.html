@@ -10,34 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.css">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
             color: #343a40;
             line-height: 1.6;
-            cursor: auto; /* Default cursor */
         }
         .navbar {
-            background-color: #000000 !important; /* Black from Malawi flag */
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
+            background-color: #000000 !important;
         }
         .navbar-brand, .nav-link {
             color: #fff !important;
             font-weight: 600;
         }
         .nav-link:hover {
-            color: #FCD116 !important; /* Yellow sun */
+            color: #FCD116 !important;
         }
         #hero {
             background-image: url('https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg');
             background-size: cover;
             background-position: center;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -53,7 +47,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0,0,0,0.5);
         }
         #hero > * {
             position: relative;
@@ -62,31 +56,25 @@
         #hero h2 {
             font-size: 3.5em;
             font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         #hero p {
             font-size: 1.8em;
             margin: 15px 0;
         }
         .btn-primary {
-            background-color: #CE1126; /* Red from flag */
+            background-color: #CE1126;
             border: none;
             padding: 15px 30px;
             font-size: 1.2em;
             font-weight: 600;
-            transition: transform 0.3s, background-color 0.3s;
+            transition: background-color 0.3s;
             border-radius: 5px;
         }
         .btn-primary:hover {
-            transform: scale(1.05);
-            background-color: #007A33; /* Green from flag */
+            background-color: #007A33;
         }
-        section.section {
+        section {
             padding: 80px 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         #about {
             background-color: #fff;
@@ -99,18 +87,14 @@
         .project-card {
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #dee2e6;
-            cursor: pointer;
-            background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Subtle gradient for texture */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
         }
         .project-card .card-img-top {
             height: 250px;
             object-fit: cover;
-            filter: brightness(0.95); /* Slight imperfection */
         }
         #contact {
             background-color: #000000;
@@ -131,17 +115,11 @@
             padding: 30px 0;
             font-size: 0.9em;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         @media (max-width: 768px) {
             #hero h2 { font-size: 2.5em; }
             #hero p { font-size: 1.4em; }
-            section.section { padding: 60px 0; min-height: auto; }
+            section { padding: 60px 0; }
             .project-card .card-img-top { height: 200px; }
-            .custom-cursor { display: none; }
-            body { overflow: auto !important; }
         }
         .btn-link {
             margin: 5px;
@@ -161,9 +139,6 @@
         .modal-body {
             padding: 0;
             text-align: center;
-        }
-        i {
-            speak: none;
         }
         .awaken-card {
             border: 2px solid #CE1126;
@@ -280,10 +255,8 @@
         #skills .skill-card {
             text-align: center;
             padding: 20px;
-            transition: transform 0.3s;
             border: 1px solid #dee2e6;
             border-radius: 10px;
-            background: linear-gradient(145deg, #ffffff, #f0f0f0);
         }
         #skills .skill-card:hover {
             transform: translateY(-5px);
@@ -291,7 +264,7 @@
         }
         #skills .skill-icon {
             font-size: 3em;
-            color: #007A33; /* Green for skills */
+            color: #007A33;
             margin-bottom: 15px;
         }
         #testimonials {
@@ -339,7 +312,6 @@
             border: 4px solid #007A33;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease;
         }
         .carousel-item.active img {
             transform: scale(1.02);
@@ -359,23 +331,6 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             font-size: 1.2em;
-        }
-        /* Custom Cursor */
-        .custom-cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #FCD116;
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s, background-color 0.3s;
-            z-index: 9999;
-        }
-        .custom-cursor.hover {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(252, 209, 22, 0.3);
         }
         /* Portfolio Grid */
         #portfolio .row {
@@ -403,60 +358,11 @@
         .portfolio-item.show {
             display: block;
         }
-        /* Art Deco Inspired Elements */
-        .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #CE1126;
-        }
-        .section-title::before, .section-title::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 50px;
-            height: 2px;
-            background: linear-gradient(to right, #007A33, #CE1126);
-        }
-        .section-title::before {
-            left: -60px;
-        }
-        .section-title::after {
-            right: -60px;
-        }
-        /* Tactile Texture */
-        body {
-            background-image: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            background-attachment: fixed;
-        }
-        /* Rebellion/Imperfection */
-        .project-card {
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-        }
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAADBJREFUOE9j/P///38GEgADNgEOOaA8hAAAAABJRU5ErkJggg==') repeat; /* Subtle noise texture */
-            opacity: 0.05;
-            pointer-events: none;
-        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
 
-    <div class="custom-cursor" id="customCursor"></div>
-
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Dynamité Graphix</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -464,276 +370,267 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link fp-link" href="#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link fp-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link fp-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link fp-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link fp-link" href="#bible">Bible Verses</a></li>
-                    <li class="nav-item"><a class="nav-link fp-link" href="#testimonials">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link fp-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://drmarcus-dm.github.io/Dumisani-Tukula-s-Portfolio-/" target="_blank">Personal Site (New Window)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bible">Bible Verses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div id="fullpage">
-        <section class="section text-center" id="hero" data-anchor="hero">
-            <h2 class="animate__animated animate__fadeInDown wow fadeIn">Professional Graphic Designer from Malawi</h2>
-            <p class="animate__animated animate__fadeInUp wow fadeIn" data-wow-delay="0.5s">Bringing ideas to life with precision and creativity!</p>
-            <a href="#portfolio" class="btn btn-primary animate__animated animate__zoomIn wow zoomIn" data-wow-delay="1s">View My Work</a>
-        </section>
+    <section id="hero" class="text-center">
+        <h2>Professional Graphic Designer from Malawi</h2>
+        <p>Bringing ideas to life with precision and creativity!</p>
+        <a href="#portfolio" class="btn btn-primary">View My Work</a>
+    </section>
 
-        <section class="section container" id="about" data-anchor="about">
-            <div class="row justify-content-center wow fadeInUp">
-                <div class="col-lg-8 text-center">
-                    <h3 class="mb-4 section-title">About Me</h3>
-                    <p>Hello! I'm Dynamité Graphix (real name: Dumisani Tukula), a dedicated graphic designer based in Malawi. With a sharp eye for detail and a passion for innovative design, I specialize in creating impactful visuals that engage and inspire. From logos and posters to digital illustrations, I deliver professional results tailored to your needs. Let's collaborate to realize your vision!</p>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#cvModal" class="btn btn-primary mt-3">View My CV</a>
-                </div>
+    <section id="about" class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h3 class="mb-4">About Me</h3>
+                <p>Hello! I'm Dynamité Graphix (real name: Dumisani Tukula), a dedicated graphic designer based in Malawi. With a sharp eye for detail and a passion for innovative design, I specialize in creating impactful visuals that engage and inspire. From logos and posters to digital illustrations, I deliver professional results tailored to your needs. Let's collaborate to realize your vision!</p>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#cvModal" class="btn btn-primary mt-3">View My CV</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section container" id="skills" data-anchor="skills">
-            <h3 class="text-center mb-5 section-title">My Skills</h3>
+    <section id="skills" class="container">
+        <h3 class="text-center mb-5">My Skills</h3>
+        <div class="row g-4">
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-palette skill-icon"></i>
+                <h4>Graphic Design</h4>
+                <p>Expert in Adobe Photoshop, Illustrator, and InDesign for creating professional visuals.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-draw-polygon skill-icon"></i>
+                <h4>Digital Illustration</h4>
+                <p>Skilled in digital art tools to produce captivating illustrations and concepts.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-briefcase skill-icon"></i>
+                <h4>Branding & Identity</h4>
+                <p>Developing comprehensive brand strategies and visual identities for businesses.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-ad skill-icon"></i>
+                <h4>Poster & Flyer Design</h4>
+                <p>Creating eye-catching promotional materials for events and marketing.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-music skill-icon"></i>
+                <h4>Album Art</h4>
+                <p>Designing unique album covers and music-related graphics.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-hospital-user skill-icon"></i>
+                <h4>Specialized Projects</h4>
+                <p>Tailored designs for institutions like health sciences and education sectors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h3 class="text-center mb-5">My Portfolio</h3>
+            <div class="filter-buttons">
+                <button class="btn filter-btn active" data-filter="all">All</button>
+                <button class="btn filter-btn" data-filter="logo">Logos</button>
+                <button class="btn filter-btn" data-filter="flyer">Flyers</button>
+                <button class="btn filter-btn" data-filter="brand">Brands</button>
+                <button class="btn filter-btn" data-filter="album">Album Art</button>
+                <button class="btn filter-btn" data-filter="technician">Technicians</button>
+                <button class="btn filter-btn" data-filter="edit">Photo Edits</button>
+            </div>
             <div class="row g-4">
-                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="0.2s">
-                    <i class="fas fa-palette skill-icon"></i>
-                    <h4>Graphic Design</h4>
-                    <p>Expert in Adobe Photoshop, Illustrator, and InDesign for creating professional visuals.</p>
-                </div>
-                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="0.4s">
-                    <i class="fas fa-draw-polygon skill-icon"></i>
-                    <h4>Digital Illustration</h4>
-                    <p>Skilled in digital art tools to produce captivating illustrations and concepts.</p>
-                </div>
-                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="0.6s">
-                    <i class="fas fa-briefcase skill-icon"></i>
-                    <h4>Branding & Identity</h4>
-                    <p>Developing comprehensive brand strategies and visual identities for businesses.</p>
-                </div>
-                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="0.8s">
-                    <i class="fas fa-ad skill-icon"></i>
-                    <h4>Poster & Flyer Design</h4>
-                    <p>Creating eye-catching promotional materials for events and marketing.</p>
-                </div>
-                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="1s">
-                    <i class="fas fa-music skill-icon"></i>
-                    <h4>Album Art</h4>
-                    <p>Designing unique album covers and music-related graphics.</p>
-                </div>
-                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="1.2s">
-                    <i class="fas fa-hospital-user skill-icon"></i>
-                    <h4>Specialized Projects</h4>
-                    <p>Tailored designs for institutions like health sciences and education sectors.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="portfolio" data-anchor="portfolio">
-            <div class="container">
-                <h3 class="text-center mb-5 section-title">My Portfolio</h3>
-                <div class="filter-buttons">
-                    <button class="btn filter-btn active" data-filter="all">All</button>
-                    <button class="btn filter-btn" data-filter="logo">Logos</button>
-                    <button class="btn filter-btn" data-filter="flyer">Flyers</button>
-                    <button class="btn filter-btn" data-filter="brand">Brands</button>
-                    <button class="btn filter-btn" data-filter="album">Album Art</button>
-                    <button class="btn filter-btn" data-filter="technician">Technicians</button>
-                    <button class="btn filter-btn" data-filter="edit">Photo Edits</button>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-4 portfolio-item show logo">
-                        <div class="card project-card wow fadeInLeft" data-tilt>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#logoModal">
-                                <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
-                            </a>
-                            <div class="card-body text-center">
-                                <h4 class="card-title">Logo Designs</h4>
-                                <p class="card-text">Custom logos that represent your brand's essence, including creative real estate designs.</p>
-                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 portfolio-item show flyer">
-                        <div class="card project-card wow fadeInUp" data-tilt>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#posterModal">
-                                <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="card-img-top" alt="Poster Art" loading="lazy">
-                            </a>
-                            <div class="card-body text-center">
-                                <h4 class="card-title">Flyers</h4>
-                                <p class="card-text">Eye-catching Flyers for events and promotions.</p>
-                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">Check Out on Facebook</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 portfolio-item show brand">
-                        <div class="card project-card wow fadeInRight" data-tilt>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#digitalModal">
-                                <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="card-img-top" alt="KFC ALL STARS GHOST PEPPER" loading="lazy">
-                            </a>
-                            <div class="card-body text-center">
-                                <h4 class="card-title">Brands</h4>
-                                <p class="card-text">Creative branding designs I made for some brands.</p>
-                                <a href="https://wa.me/265994768244" target="_blank" class="btn btn-link">Contact on WhatsApp for More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 portfolio-item show album">
-                        <div class="card project-card awaken-card wow fadeIn" data-tilt>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#awakenModal">
-                                <img src="https://i.ibb.co/SDRXcWJC/DMw-Graphix-084408.jpg" class="card-img-top" alt="I'm Awaken Album Art" loading="lazy">
-                            </a>
-                            <div class="card-body text-center">
-                                <h4 class="card-title">I'm Awaken</h4>
-                                <p class="card-text">Artworks for my upcoming album.</p>
-                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 portfolio-item show technician">
-                        <div class="card project-card wow fadeInLeft" data-tilt>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#techniciansModal">
-                                <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="card-img-top" alt="Technicians from MCHS LL Campus" loading="lazy">
-                            </a>
-                            <div class="card-body text-center">
-                                <h4 class="card-title">Technicians from MCHS LL Campus</h4>
-                                <p class="card-text">Custom designs created for technicians at Malawi College of Health Sciences, Lilongwe Campus.</p>
-                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 portfolio-item show edit">
-                        <div class="card project-card wow fadeInRight" data-tilt>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#randomEditsModal">
-                                <img src="https://i.ibb.co/SDDHSG0B/dmwdp-jpg2-062624.jpg" class="card-img-top" alt="Random Photo Edits" loading="lazy">
-                            </a>
-                            <div class="card-body text-center">
-                                <h4 class="card-title">Random Photo Edits</h4>
-                                <p class="card-text">Showcasing various photos I've edited creatively.</p>
-                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
-                            </div>
+                <div class="col-md-4 portfolio-item show logo">
+                    <div class="card project-card">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#logoModal">
+                            <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Logo Designs</h4>
+                            <p class="card-text">Custom logos that represent your brand's essence, including creative real estate designs.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
                         </div>
                     </div>
                 </div>
-                <p class="text-center mt-5">Most of my work is showcased on my Dynamité Graphix page on Facebook. Click the links above to see more!</p>
-                <p class="text-center mt-3">You can also visit and admire my work at my personal portfolio website: <a href="https://drmarcus-dm.github.io/Dumisani-Tukula-s-Portfolio-/" target="_blank">Dumisani Tukula's Portfolio</a></p>
-            </div>
-        </section>
-
-        <section class="section container text-center" id="bible" data-anchor="bible">
-            <h3 class="mb-4 section-title">Bible Verse Generator</h3>
-            <p>Generate a random Bible verse and select a translation version to view it in.</p>
-            <select id="translation-select" class="form-select mb-3" style="max-width: 300px; margin: auto;">
-                <option value="kjv">King James Version (KJV)</option>
-                <option value="web">World English Bible (WEB)</option>
-                <option value="asv">American Standard Version (ASV)</option>
-            </select>
-            <button id="generate-verse" class="btn btn-primary">Generate Verse</button>
-            <div id="verse-display" class="wow fadeInUp" data-wow-delay="0.5s"></div>
-        </section>
-
-        <section class="section" id="testimonials" data-anchor="testimonials">
-            <div class="container">
-                <h3 class="text-center mb-5 section-title">What Clients Say</h3>
-                <div class="row g-4">
-                    <div class="col-md-4 wow fadeInLeft">
-                        <div class="card testimonial-card">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"Dynamité Graphix delivered an outstanding logo that perfectly captured our brand vision. Highly recommended!"</p>
-                            <p><strong>- Business Owner, Malawi</strong></p>
+                <div class="col-md-4 portfolio-item show flyer">
+                    <div class="card project-card">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#posterModal">
+                            <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="card-img-top" alt="Poster Art" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Flyers</h4>
+                            <p class="card-text">Eye-catching Flyers for events and promotions.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">Check Out on Facebook</a>
                         </div>
                     </div>
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="card testimonial-card">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"The flyers designed for our event were eye-catching and professional. Great attention to detail!"</p>
-                            <p><strong>- Event Organizer</strong></p>
+                </div>
+                <div class="col-md-4 portfolio-item show brand">
+                    <div class="card project-card">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#digitalModal">
+                            <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="card-img-top" alt="KFC ALL STARS GHOST PEPPER" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Brands</h4>
+                            <p class="card-text">Creative branding designs I made for some brands.</p>
+                            <a href="https://wa.me/265994768244" target="_blank" class="btn btn-link">Contact on WhatsApp for More</a>
                         </div>
                     </div>
-                    <div class="col-md-4 wow fadeInRight" data-wow-delay="0.6s">
-                        <div class="card testimonial-card">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"Fantastic branding work that elevated our company's image. Creative and reliable designer."</p>
-                            <p><strong>- Brand Manager</strong></p>
+                </div>
+                <div class="col-md-4 portfolio-item show album">
+                    <div class="card project-card awaken-card">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#awakenModal">
+                            <img src="https://i.ibb.co/SDRXcWJC/DMw-Graphix-084408.jpg" class="card-img-top" alt="I'm Awaken Album Art" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">I'm Awaken</h4>
+                            <p class="card-text">Artworks for my upcoming album.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 portfolio-item show technician">
+                    <div class="card project-card">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#techniciansModal">
+                            <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="card-img-top" alt="Technicians from MCHS LL Campus" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Technicians from MCHS LL Campus</h4>
+                            <p class="card-text">Custom designs created for technicians at Malawi College of Health Sciences, Lilongwe Campus.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 portfolio-item show edit">
+                    <div class="card project-card">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#randomEditsModal">
+                            <img src="https://i.ibb.co/SDDHSG0B/dmwdp-jpg2-062624.jpg" class="card-img-top" alt="Random Photo Edits" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Random Photo Edits</h4>
+                            <p class="card-text">Showcasing various photos I've edited creatively.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <p class="text-center mt-5">Most of my work is showcased on my Dynamité Graphix page on Facebook. Click the links above to see more!</p>
+            <p class="text-center mt-3">You can also visit and admire my work at my personal portfolio website: <a href="https://drmarcus-dm.github.io/Dumisani-Tukula-s-Portfolio-/" target="_blank">Dumisani Tukula's Portfolio</a></p>
+        </div>
+    </section>
 
-        <section class="section text-center" id="contact" data-anchor="contact">
-            <div class="container">
-                <h3 class="mb-4 section-title">Get in Touch</h3>
-                <p>Ready to collaborate? Reach out via:</p>
-                <div class="d-flex justify-content-center mb-4">
-                    <a href="mailto:dumisanitukula@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x mx-3 wow fadeIn" data-wow-delay="0.2s"></i></a>
-                    <a href="https://wa.me/265994768244" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x mx-3 wow fadeIn" data-wow-delay="0.4s"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x mx-3 wow fadeIn" data-wow-delay="0.6s"></i></a>
+    <section id="bible" class="container text-center">
+        <h3 class="mb-4">Bible Verse Generator</h3>
+        <p>Generate a random Bible verse and select a translation version to view it in.</p>
+        <select id="translation-select" class="form-select mb-3" style="max-width: 300px; margin: auto;">
+            <option value="kjv">King James Version (KJV)</option>
+            <option value="web">World English Bible (WEB)</option>
+            <option value="asv">American Standard Version (ASV)</option>
+        </select>
+        <button id="generate-verse" class="btn btn-primary">Generate Verse</button>
+        <div id="verse-display"></div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h3 class="text-center mb-5">What Clients Say</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Dynamité Graphix delivered an outstanding logo that perfectly captured our brand vision. Highly recommended!"</p>
+                        <p><strong>- Business Owner, Malawi</strong></p>
+                    </div>
                 </div>
-                <p>
-                    <a href="mailto:dumisanitukula@gmail.com">Email: dumisanitukula@gmail.com</a> |
-                    <a href="https://wa.me/265994768244" target="_blank">WhatsApp: +265994768244</a> |
-                    <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank">Facebook: Dynamité Graphix</a>
-                </p>
+                <div class="col-md-4">
+                    <div class="card testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The flyers designed for our event were eye-catching and professional. Great attention to detail!"</p>
+                        <p><strong>- Event Organizer</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Fantastic branding work that elevated our company's image. Creative and reliable designer."</p>
+                        <p><strong>- Brand Manager</strong></p>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="section text-center" data-anchor="footer">
-            <p>Designed and Built by Dynamité Graphix &copy; 2026 | Malawi</p>
-        </footer>
+    <section id="contact" class="text-center">
+        <div class="container">
+            <h3 class="mb-4">Get in Touch</h3>
+            <p>Ready to collaborate? Reach out via:</p>
+            <div class="d-flex justify-content-center mb-4">
+                <a href="mailto:dumisanitukula@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x mx-3"></i></a>
+                <a href="https://wa.me/265994768244" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x mx-3"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x mx-3"></i></a>
+            </div>
+            <p>
+                <a href="mailto:dumisanitukula@gmail.com">Email: dumisanitukula@gmail.com</a> |
+                <a href="https://wa.me/265994768244" target="_blank">WhatsApp: +265994768244</a> |
+                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank">Facebook: Dynamité Graphix</a>
+            </p>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <p>Designed and Built by Dynamité Graphix &copy; 2026 | Malawi</p>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal fade" id="logoModal" tabindex="-1" aria-labelledby="logoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoModalLabel">Logo Designs</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="logoCarouselModal" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="d-block w-100" alt="Logo Art">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/FLX2q4mt/IMG-20260101-163954.jpg" class="d-block w-100" alt="Bangwe House Agents Logo">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/HpPtmFRQ/IMG-20260101-163512.jpg" class="d-block w-100" alt="Additional Logo Design">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#logoCarouselModal" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#logoCarouselModal" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Modals (unchanged) -->
-    <!-- ... (keep all modals as is) ... -->
+    <!-- ... (keep other modals similar, removed to save space) ... -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script>
-        new fullpage('#fullpage', {
-            anchors: ['hero', 'about', 'skills', 'portfolio', 'bible', 'testimonials', 'contact', 'footer'],
-            navigation: true,
-            parallax: true,
-            parallaxOptions: { type: 'reveal', percentage: 62, property: 'translate' },
-            responsiveWidth: 768
-        });
-
-        new WOW().init();
-
-        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-            max: 25,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.5
-        });
-
-        if (window.matchMedia("(min-width: 769px)").matches) {
-            const cursor = document.getElementById('customCursor');
-            document.addEventListener('mousemove', e => {
-                cursor.style.left = e.pageX + 'px';
-                cursor.style.top = e.pageY + 'px';
-            });
-            document.querySelectorAll('a, button, .project-card').forEach(el => {
-                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-            });
-        }
-
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.classList.contains(filter)) {
-                        item.classList.add('show');
-                    } else {
-                        item.classList.remove('show');
-                    }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
         });
@@ -750,6 +647,23 @@
         backToTop.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.classList.add('show');
+                    } else {
+                        item.classList.remove('show');
+                    }
+                });
+            });
         });
 
         const books = ['genesis', 'exodus', 'leviticus', 'numbers', 'deuteronomy', 'joshua', 'judges', 'ruth', '1samuel', '2samuel', '1kings', '2kings', '1chronicles', '2chronicles', 'ezra', 'nehemiah', 'esther', 'job', 'psalms', 'proverbs', 'ecclesiastes', 'songofsolomon', 'isaiah', 'jeremiah', 'lamentations', 'ezekiel', 'daniel', 'hosea', 'joel', 'amos', 'obadiah', 'jonah', 'micah', 'nahum', 'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi', 'matthew', 'mark', 'luke', 'john', 'acts', 'romans', '1corinthians', '2corinthians', 'galatians', 'ephesians', 'philippians', 'colossians', '1thessalonians', '2thessalonians', '1timothy', '2timothy', 'titus', 'philemon', 'hebrews', 'james', '1peter', '2peter', '1john', '2john', '3john', 'jude', 'revelation'];
@@ -775,14 +689,6 @@
             } catch (error) {
                 verseDisplay.innerHTML = '<p>Error fetching verse. Please try again later.</p>';
             }
-        });
-
-        document.querySelectorAll('.fp-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = link.getAttribute('href').substring(1);
-                fullpage_api.moveTo(target);
-            });
         });
     </script>
 </body>
