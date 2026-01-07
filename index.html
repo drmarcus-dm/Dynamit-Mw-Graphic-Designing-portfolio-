@@ -11,28 +11,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.css">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
             color: #343a40;
             line-height: 1.6;
+            overflow: hidden; /* For fullpage.js */
         }
         .navbar {
-            background-color: #007bff !important;
+            background-color: #000000 !important; /* Black from Malawi flag */
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
         }
         .navbar-brand, .nav-link {
             color: #fff !important;
             font-weight: 600;
         }
         .nav-link:hover {
-            color: #ffd633 !important;
+            color: #FCD116 !important; /* Yellow sun */
         }
         #hero {
             background-image: url('https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg');
             background-size: cover;
             background-position: center;
-            height: 90vh;
+            background-attachment: fixed; /* Parallax effect */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -48,16 +54,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
             animation: pulseOverlay 5s infinite alternate ease-in-out;
         }
         @keyframes pulseOverlay {
-            0% {
-                opacity: 0.4;
-            }
-            100% {
-                opacity: 0.6;
-            }
+            0% { opacity: 0.4; }
+            100% { opacity: 0.6; }
         }
         #hero > * {
             position: relative;
@@ -73,7 +75,7 @@
             margin: 15px 0;
         }
         .btn-primary {
-            background-color: #007bff;
+            background-color: #CE1126; /* Red from flag */
             border: none;
             padding: 15px 30px;
             font-size: 1.2em;
@@ -83,10 +85,14 @@
         }
         .btn-primary:hover {
             transform: scale(1.05);
-            background-color: #0056b3;
+            background-color: #007A33; /* Green from flag */
         }
-        section {
+        section.section {
             padding: 80px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #about {
             background-color: #fff;
@@ -100,6 +106,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #dee2e6;
             animation: fadeInUp 1s ease-out;
+            cursor: pointer; /* Custom cursor hint */
         }
         .project-card:hover {
             transform: translateY(-10px);
@@ -110,11 +117,11 @@
             object-fit: cover;
         }
         #contact {
-            background-color: #007bff;
+            background-color: #000000;
             color: #fff;
         }
         #contact a {
-            color: #ffd633;
+            color: #FCD116;
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
@@ -160,18 +167,18 @@
             speak: none;
         }
         .awaken-card {
-            border: 2px solid #007bff;
-            box-shadow: 0 0 20px rgba(0,123,255,0.2);
+            border: 2px solid #CE1126;
+            box-shadow: 0 0 20px rgba(206,17,38,0.2);
             background-color: #fff;
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
         }
         .awaken-card:hover {
             transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 12px 24px rgba(0,123,255,0.3);
-            border-color: #0056b3;
+            box-shadow: 0 12px 24px rgba(206,17,38,0.3);
+            border-color: #007A33;
         }
         .awaken-card .card-title {
-            color: #007bff;
+            color: #CE1126;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -181,9 +188,9 @@
             color: #555;
         }
         #awakenModal .modal-header {
-            background-color: #007bff;
+            background-color: #CE1126;
             color: #fff;
-            border-bottom: 2px solid #007bff;
+            border-bottom: 2px solid #CE1126;
         }
         #awakenModal .modal-title {
             font-weight: 800;
@@ -194,7 +201,7 @@
             filter: invert(1);
         }
         #awakenModal .carousel-item img {
-            border: 4px solid #007bff;
+            border: 4px solid #CE1126;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.5s ease;
@@ -203,9 +210,9 @@
             transform: scale(1.02);
         }
         #cvModal .modal-header {
-            background-color: #007bff;
+            background-color: #CE1126;
             color: #fff;
-            border-bottom: 2px solid #007bff;
+            border-bottom: 2px solid #CE1126;
         }
         #cvModal .modal-title {
             font-weight: 800;
@@ -236,7 +243,7 @@
         #cvModal .modal-body img {
             max-height: 80vh;
             object-fit: contain;
-            border: 4px solid #007bff;
+            border: 4px solid #CE1126;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -246,261 +253,11 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
         #cvModal .modal-footer {
-            border-top: 2px solid #007bff;
-            background-color: #007bff;
+            border-top: 2px solid #CE1126;
+            background-color: #CE1126;
         }
         #cvModal .btn-primary {
-            background-color: #007bff;
-            color: #fff;
-            font-weight: 600;
-        }
-        #cvModal .btn-secondary {
-            background-color: #6c757d;
-            color: #fff;
-        }
-        .modal-dialog {
-            max-width: 90%;
-        }
-        @media (min-width: 1200px) {
-body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
-            line-height: 1.6;
-        }
-        .navbar {
-            background-color: #0F2C67 !important;
-        }
-        .navbar-brand, .nav-link {
-            color: #fff !important;
-            font-weight: 600;
-        }
-        .nav-link:hover {
-            color: #FFCA03 !important;
-        }
-        #hero {
-            background-image: url('https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            position: relative;
-        }
-        #hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(15, 44, 103, 0.5); /* Adjusted to use primary color overlay */
-            animation: pulseOverlay 5s infinite alternate ease-in-out;
-        }
-        @keyframes pulseOverlay {
-            0% {
-                opacity: 0.4;
-            }
-            100% {
-                opacity: 0.6;
-            }
-        }
-        #hero > * {
-            position: relative;
-            z-index: 1;
-        }
-        #hero h2 {
-            font-size: 3.5em;
-            font-weight: 800;
-            animation: fadeIn 2s ease-in-out;
-        }
-        #hero p {
-            font-size: 1.8em;
-            margin: 15px 0;
-        }
-        .btn-primary {
-            background-color: #0F2C67;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            font-weight: 600;
-            transition: transform 0.3s, background-color 0.3s;
-            border-radius: 5px;
-        }
-        .btn-primary:hover {
-            transform: scale(1.05);
-            background-color: #CD1818;
-        }
-        section {
-            padding: 80px 0;
-        }
-        #about {
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-        #portfolio {
-            background-color: #f8f9fa;
-        }
-        .project-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #dee2e6;
-            animation: fadeInUp 1s ease-out;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-        .project-card .card-img-top {
-            height: 250px;
-            object-fit: cover;
-        }
-        #contact {
-            background-color: #0F2C67;
-            color: #fff;
-        }
-        #contact a {
-            color: #FFCA03;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-        }
-        #contact a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 30px 0;
-            font-size: 0.9em;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 768px) {
-            #hero h2 { font-size: 2.5em; }
-            #hero p { font-size: 1.4em; }
-            section { padding: 60px 0; }
-        }
-        .btn-link {
-            margin: 5px;
-        }
-        img {
-            loading: lazy;
-        }
-        .modal-content {
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .carousel-item img {
-            max-height: 80vh;
-            object-fit: contain;
-            margin: 0 auto;
-        }
-        .modal-body {
-            padding: 0;
-            text-align: center;
-        }
-        i {
-            speak: none;
-        }
-        .awaken-card {
-            border: 2px solid #F3950D; /* Updated to secondary */
-            box-shadow: 0 0 20px rgba(243, 149, 13, 0.2);
-            background-color: #fff;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        }
-        .awaken-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 12px 24px rgba(243, 149, 13, 0.3);
-            border-color: #CD1818; /* Hover to tertiary */
-        }
-        .awaken-card .card-title {
-            color: #0F2C67;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .awaken-card .card-text {
-            font-style: italic;
-            color: #555;
-        }
-        #awakenModal .modal-header {
-            background-color: #0F2C67;
-            color: #fff;
-            border-bottom: 2px solid #0F2C67;
-        }
-        #awakenModal .modal-title {
-            font-weight: 800;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        #awakenModal .carousel-control-prev-icon,
-        #awakenModal .carousel-control-next-icon {
-            filter: invert(1);
-        }
-        #awakenModal .carousel-item img {
-            border: 4px solid #F3950D; /* Updated to secondary */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease;
-        }
-        #awakenModal .carousel-item.active img {
-            transform: scale(1.02);
-        }
-        #cvModal .modal-header {
-            background-color: #0F2C67;
-            color: #fff;
-            border-bottom: 2px solid #0F2C67;
-        }
-        #cvModal .modal-title {
-            font-weight: 800;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        #cvModal .modal-body {
-            padding: 20px;
-            background-color: #f9f9f9;
-            position: relative;
-        }
-        #cvModal .modal-body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1200px-Flag_of_Malawi.svg.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            z-index: 0;
-        }
-        #cvModal .modal-body > * {
-            position: relative;
-            z-index: 1;
-        }
-        #cvModal .modal-body img {
-            max-height: 80vh;
-            object-fit: contain;
-            border: 4px solid #F3950D; /* Updated to secondary */
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #cvModal .modal-body img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-        }
-        #cvModal .modal-footer {
-            border-top: 2px solid #0F2C67;
-            background-color: #0F2C67;
-        }
-        #cvModal .btn-primary {
-            background-color: #0F2C67;
+            background-color: #CE1126;
             color: #fff;
             font-weight: 600;
         }
@@ -534,287 +291,7 @@ body {
         }
         #skills .skill-icon {
             font-size: 3em;
-            color: #F3950D; /* Updated to secondary for vibrancy */
-            margin-bottom: 15px;
-        }
-        #testimonials {
-            background-color: #f8f9fa;
-        }
-        #testimonials .testimonial-card {
-            border: none;
-body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
-            line-height: 1.6;
-        }
-        .navbar {
-            background-color: #7D5A50 !important;
-        }
-        .navbar-brand, .nav-link {
-            color: #fff !important;
-            font-weight: 600;
-        }
-        .nav-link:hover {
-            color: #F5E8C7 !important;
-        }
-        #hero {
-            background-image: url('https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            position: relative;
-        }
-        #hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(125, 90, 80, 0.5); /* Adjusted to use primary color overlay */
-            animation: pulseOverlay 5s infinite alternate ease-in-out;
-        }
-        @keyframes pulseOverlay {
-            0% {
-                opacity: 0.4;
-            }
-            100% {
-                opacity: 0.6;
-            }
-        }
-        #hero > * {
-            position: relative;
-            z-index: 1;
-        }
-        #hero h2 {
-            font-size: 3.5em;
-            font-weight: 800;
-            animation: fadeIn 2s ease-in-out;
-        }
-        #hero p {
-            font-size: 1.8em;
-            margin: 15px 0;
-        }
-        .btn-primary {
-            background-color: #7D5A50;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            font-weight: 600;
-            transition: transform 0.3s, background-color 0.3s;
-            border-radius: 5px;
-        }
-        .btn-primary:hover {
-            transform: scale(1.05);
-            background-color: #9E7777;
-        }
-        section {
-            padding: 80px 0;
-        }
-        #about {
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-        #portfolio {
-            background-color: #f8f9fa;
-        }
-        .project-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #dee2e6;
-            animation: fadeInUp 1s ease-out;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-        .project-card .card-img-top {
-            height: 250px;
-            object-fit: cover;
-        }
-        #contact {
-            background-color: #7D5A50;
-            color: #fff;
-        }
-        #contact a {
-            color: #F5E8C7;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-        }
-        #contact a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #343a40;
-            color: #fff;
-            padding: 30px 0;
-            font-size: 0.9em;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 768px) {
-            #hero h2 { font-size: 2.5em; }
-            #hero p { font-size: 1.4em; }
-            section { padding: 60px 0; }
-        }
-        .btn-link {
-            margin: 5px;
-        }
-        img {
-            loading: lazy;
-        }
-        .modal-content {
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .carousel-item img {
-            max-height: 80vh;
-            object-fit: contain;
-            margin: 0 auto;
-        }
-        .modal-body {
-            padding: 0;
-            text-align: center;
-        }
-        i {
-            speak: none;
-        }
-        .awaken-card {
-            border: 2px solid #E5B299; /* Updated to secondary */
-            box-shadow: 0 0 20px rgba(229, 178, 153, 0.2);
-            background-color: #fff;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        }
-        .awaken-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 12px 24px rgba(229, 178, 153, 0.3);
-            border-color: #9E7777; /* Hover to tertiary */
-        }
-        .awaken-card .card-title {
-            color: #7D5A50;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .awaken-card .card-text {
-            font-style: italic;
-            color: #555;
-        }
-        #awakenModal .modal-header {
-            background-color: #7D5A50;
-            color: #fff;
-            border-bottom: 2px solid #7D5A50;
-        }
-        #awakenModal .modal-title {
-            font-weight: 800;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        #awakenModal .carousel-control-prev-icon,
-        #awakenModal .carousel-control-next-icon {
-            filter: invert(1);
-        }
-        #awakenModal .carousel-item img {
-            border: 4px solid #E5B299; /* Updated to secondary */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.5s ease;
-        }
-        #awakenModal .carousel-item.active img {
-            transform: scale(1.02);
-        }
-        #cvModal .modal-header {
-            background-color: #7D5A50;
-            color: #fff;
-            border-bottom: 2px solid #7D5A50;
-        }
-        #cvModal .modal-title {
-            font-weight: 800;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        #cvModal .modal-body {
-            padding: 20px;
-            background-color: #f9f9f9;
-            position: relative;
-        }
-        #cvModal .modal-body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1200px-Flag_of_Malawi.svg.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            z-index: 0;
-        }
-        #cvModal .modal-body > * {
-            position: relative;
-            z-index: 1;
-        }
-        #cvModal .modal-body img {
-            max-height: 80vh;
-            object-fit: contain;
-            border: 4px solid #E5B299; /* Updated to secondary */
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #cvModal .modal-body img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-        }
-        #cvModal .modal-footer {
-            border-top: 2px solid #7D5A50;
-            background-color: #7D5A50;
-        }
-        #cvModal .btn-primary {
-            background-color: #7D5A50;
-            color: #fff;
-            font-weight: 600;
-        }
-        #cvModal .btn-secondary {
-            background-color: #6c757d;
-            color: #fff;
-        }
-        .modal-dialog {
-            max-width: 90%;
-        }
-        @media (min-width: 1200px) {
-            .modal-xl {
-                max-width: 1140px;
-            }
-        }
-        #skills {
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-        #skills .skill-card {
-            text-align: center;
-            padding: 20px;
-            transition: transform 0.3s;
-            border: 1px solid #dee2e6;
-            border-radius: 10px;
-        }
-        #skills .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        #skills .skill-icon {
-            font-size: 3em;
-            color: #E5B299; /* Updated to secondary for subtle warmth */
+            color: #007A33; /* Green for skills */
             margin-bottom: 15px;
         }
         #testimonials {
@@ -829,7 +306,7 @@ body {
             border-radius: 10px;
         }
         #testimonials .testimonial-card i {
-            color: #9E7777; /* Updated to tertiary for soft emphasis */
+            color: #FCD116;
             font-size: 1.5em;
             margin-bottom: 10px;
         }
@@ -841,15 +318,15 @@ body {
             z-index: 1000;
             padding: 10px 15px;
             font-size: 1.2em;
-            background-color: #7D5A50;
+            background-color: #CE1126;
             color: #fff;
         }
         #techniciansModal .modal-header,
         #randomEditsModal .modal-header,
         .modal-header {
-            background-color: #7D5A50;
+            background-color: #CE1126;
             color: #fff;
-            border-bottom: 2px solid #7D5A50;
+            border-bottom: 2px solid #CE1126;
         }
         .modal-title {
             font-weight: 800;
@@ -859,7 +336,7 @@ body {
             filter: invert(1);
         }
         .carousel-item img {
-            border: 4px solid #E5B299; /* Updated to secondary */
+            border: 4px solid #007A33;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.5s ease;
@@ -883,32 +360,59 @@ body {
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             font-size: 1.2em;
         }
-        .special-card {
-            border: 2px solid #E5B299;
-            box-shadow: 0 0 20px rgba(229, 178, 153, 0.2);
-            background-color: #fff;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        /* Custom Cursor */
+        body {
+            cursor: none;
         }
-        .special-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 12px 24px rgba(229, 178, 153, 0.3);
-            border-color: #9E7777;
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #FCD116;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s;
+            z-index: 9999;
         }
-        .special-card .card-title {
-            color: #7D5A50;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .custom-cursor.hover {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(252, 209, 22, 0.3);
         }
-        .special-card .card-text {
-            font-style: italic;
-            color: #555;
+        /* Asymmetric Grid for Portfolio */
+        #portfolio .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        /* Filter Buttons */
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .filter-btn {
+            margin: 5px;
+            background-color: #007A33;
+            color: #fff;
+        }
+        .filter-btn.active {
+            background-color: #CE1126;
+        }
+        /* Hide/Show for Filters */
+        .portfolio-item {
+            display: none;
+        }
+        .portfolio-item.show {
+            display: block;
         }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
 
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Dynamité Graphix</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -916,227 +420,227 @@ body {
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#bible">Bible Verses</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link fp-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fp-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link fp-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link fp-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link fp-link" href="#bible">Bible Verses</a></li>
+                    <li class="nav-item"><a class="nav-link fp-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link fp-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://drmarcus-dm.github.io/Dumisani-Tukula-s-Portfolio-/" target="_blank">Personal Site (New Window)</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="hero" class="text-center">
-        <h2 class="animate__animated animate__fadeInDown">Professional Graphic Designer from Malawi</h2>
-        <p class="animate__animated animate__fadeInUp">Bringing ideas to life with precision and creativity!</p>
-        <a href="#portfolio" class="btn btn-primary animate__animated animate__zoomIn">View My Work</a>
-    </section>
+    <div id="fullpage">
+        <section class="section text-center" id="hero" data-anchor="hero">
+            <h2 class="animate__animated animate__fadeInDown wow fadeIn">Professional Graphic Designer from Malawi</h2>
+            <p class="animate__animated animate__fadeInUp wow fadeIn" data-wow-delay="0.5s">Bringing ideas to life with precision and creativity!</p>
+            <a href="#portfolio" class="btn btn-primary animate__animated animate__zoomIn wow zoomIn" data-wow-delay="1s">View My Work</a>
+        </section>
 
-    <section id="about" class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <h3 class="mb-4">About Me</h3>
-                <p>Hello! I'm Dynamité Graphix (real name: Dumisani Tukula), a dedicated graphic designer based in Malawi. With a sharp eye for detail and a passion for innovative design, I specialize in creating impactful visuals that engage and inspire. From logos and posters to digital illustrations, I deliver professional results tailored to your needs. Let's collaborate to realize your vision!</p>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#cvModal" class="btn btn-primary mt-3">View My CV</a>
+        <section class="section container" id="about" data-anchor="about">
+            <div class="row justify-content-center wow fadeInUp">
+                <div class="col-lg-8 text-center">
+                    <h3 class="mb-4">About Me</h3>
+                    <p>Hello! I'm Dynamité Graphix (real name: Dumisani Tukula), a dedicated graphic designer based in Malawi. With a sharp eye for detail and a passion for innovative design, I specialize in creating impactful visuals that engage and inspire. From logos and posters to digital illustrations, I deliver professional results tailored to your needs. Let's collaborate to realize your vision!</p>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#cvModal" class="btn btn-primary mt-3">View My CV</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="container">
-        <h3 class="text-center mb-5">My Skills</h3>
-        <div class="row g-4">
-            <div class="col-md-4 skill-card">
-                <i class="fas fa-palette skill-icon"></i>
-                <h4>Graphic Design</h4>
-                <p>Expert in Adobe Photoshop, Illustrator, and InDesign for creating professional visuals.</p>
-            </div>
-            <div class="col-md-4 skill-card">
-                <i class="fas fa-draw-polygon skill-icon"></i>
-                <h4>Digital Illustration</h4>
-                <p>Skilled in digital art tools to produce captivating illustrations and concepts.</p>
-            </div>
-            <div class="col-md-4 skill-card">
-                <i class="fas fa-briefcase skill-icon"></i>
-                <h4>Branding & Identity</h4>
-                <p>Developing comprehensive brand strategies and visual identities for businesses.</p>
-            </div>
-            <div class="col-md-4 skill-card">
-                <i class="fas fa-ad skill-icon"></i>
-                <h4>Poster & Flyer Design</h4>
-                <p>Creating eye-catching promotional materials for events and marketing.</p>
-            </div>
-            <div class="col-md-4 skill-card">
-                <i class="fas fa-music skill-icon"></i>
-                <h4>Album Art</h4>
-                <p>Designing unique album covers and music-related graphics.</p>
-            </div>
-            <div class="col-md-4 skill-card">
-                <i class="fas fa-hospital-user skill-icon"></i>
-                <h4>Specialized Projects</h4>
-                <p>Tailored designs for institutions like health sciences and education sectors.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio">
-        <div class="container">
-            <h3 class="text-center mb-5">My Portfolio</h3>
+        <section class="section container" id="skills" data-anchor="skills">
+            <h3 class="text-center mb-5 wow fadeIn">My Skills</h3>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card project-card animate__animated animate__fadeInLeft">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#logoModal">
-                            <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
-                        </a>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Logo Designs</h4>
-                            <p class="card-text">Custom logos that represent your brand's essence, including creative real estate designs.</p>
-                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="0.2s">
+                    <i class="fas fa-palette skill-icon"></i>
+                    <h4>Graphic Design</h4>
+                    <p>Expert in Adobe Photoshop, Illustrator, and InDesign for creating professional visuals.</p>
+                </div>
+                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="0.4s">
+                    <i class="fas fa-draw-polygon skill-icon"></i>
+                    <h4>Digital Illustration</h4>
+                    <p>Skilled in digital art tools to produce captivating illustrations and concepts.</p>
+                </div>
+                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="0.6s">
+                    <i class="fas fa-briefcase skill-icon"></i>
+                    <h4>Branding & Identity</h4>
+                    <p>Developing comprehensive brand strategies and visual identities for businesses.</p>
+                </div>
+                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="0.8s">
+                    <i class="fas fa-ad skill-icon"></i>
+                    <h4>Poster & Flyer Design</h4>
+                    <p>Creating eye-catching promotional materials for events and marketing.</p>
+                </div>
+                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="1s">
+                    <i class="fas fa-music skill-icon"></i>
+                    <h4>Album Art</h4>
+                    <p>Designing unique album covers and music-related graphics.</p>
+                </div>
+                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="1.2s">
+                    <i class="fas fa-hospital-user skill-icon"></i>
+                    <h4>Specialized Projects</h4>
+                    <p>Tailored designs for institutions like health sciences and education sectors.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="portfolio" data-anchor="portfolio">
+            <div class="container">
+                <h3 class="text-center mb-5 wow fadeIn">My Portfolio</h3>
+                <div class="filter-buttons">
+                    <button class="btn filter-btn active" data-filter="all">All</button>
+                    <button class="btn filter-btn" data-filter="logo">Logos</button>
+                    <button class="btn filter-btn" data-filter="flyer">Flyers</button>
+                    <button class="btn filter-btn" data-filter="brand">Brands</button>
+                    <button class="btn filter-btn" data-filter="album">Album Art</button>
+                    <button class="btn filter-btn" data-filter="technician">Technicians</button>
+                    <button class="btn filter-btn" data-filter="edit">Photo Edits</button>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 portfolio-item show logo">
+                        <div class="card project-card animate__animated animate__fadeInLeft wow fadeInLeft" data-tilt>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#logoModal">
+                                <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
+                            </a>
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Logo Designs</h4>
+                                <p class="card-text">Custom logos that represent your brand's essence, including creative real estate designs.</p>
+                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 portfolio-item show flyer">
+                        <div class="card project-card animate__animated animate__fadeInUp wow fadeInUp" data-tilt>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#posterModal">
+                                <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="card-img-top" alt="Poster Art" loading="lazy">
+                            </a>
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Flyers</h4>
+                                <p class="card-text">Eye-catching Flyers for events and promotions.</p>
+                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">Check Out on Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 portfolio-item show brand">
+                        <div class="card project-card animate__animated animate__fadeInRight wow fadeInRight" data-tilt>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#digitalModal">
+                                <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="card-img-top" alt="KFC ALL STARS GHOST PEPPER" loading="lazy">
+                            </a>
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Brands</h4>
+                                <p class="card-text">Creative branding designs I made for some brands.</p>
+                                <a href="https://wa.me/265994768244" target="_blank" class="btn btn-link">Contact on WhatsApp for More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 portfolio-item show album">
+                        <div class="card project-card awaken-card animate__animated animate__pulse wow pulse" data-tilt>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#awakenModal">
+                                <img src="https://i.ibb.co/SDRXcWJC/DMw-Graphix-084408.jpg" class="card-img-top" alt="I'm Awaken Album Art" loading="lazy">
+                            </a>
+                            <div class="card-body text-center">
+                                <h4 class="card-title">I'm Awaken</h4>
+                                <p class="card-text">Artworks for my upcoming album.</p>
+                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 portfolio-item show technician">
+                        <div class="card project-card animate__animated animate__fadeInLeft wow fadeInLeft" data-tilt>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#techniciansModal">
+                                <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="card-img-top" alt="Technicians from MCHS LL Campus" loading="lazy">
+                            </a>
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Technicians from MCHS LL Campus</h4>
+                                <p class="card-text">Custom designs created for technicians at Malawi College of Health Sciences, Lilongwe Campus.</p>
+                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 portfolio-item show edit">
+                        <div class="card project-card animate__animated animate__fadeInRight wow fadeInRight" data-tilt>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#randomEditsModal">
+                                <img src="https://i.ibb.co/SDDHSG0B/dmwdp-jpg2-062624.jpg" class="card-img-top" alt="Random Photo Edits" loading="lazy">
+                            </a>
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Random Photo Edits</h4>
+                                <p class="card-text">Showcasing various photos I've edited creatively.</p>
+                                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card project-card animate__animated animate__fadeInUp">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#posterModal">
-                            <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="card-img-top" alt="Poster Art" loading="lazy">
-                        </a>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Flyers</h4>
-                            <p class="card-text">Eye-catching Flyers for events and promotions.</p>
-                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">Check Out on Facebook</a>
+                <p class="text-center mt-5">Most of my work is showcased on my Dynamité Graphix page on Facebook. Click the links above to see more!</p>
+                <p class="text-center mt-3">You can also visit and admire my work at my personal portfolio website: <a href="https://drmarcus-dm.github.io/Dumisani-Tukula-s-Portfolio-/" target="_blank">Dumisani Tukula's Portfolio</a></p>
+            </div>
+        </section>
+
+        <section class="section container text-center" id="bible" data-anchor="bible">
+            <h3 class="mb-4 wow fadeIn">Bible Verse Generator</h3>
+            <p>Generate a random Bible verse and select a translation version to view it in.</p>
+            <select id="translation-select" class="form-select mb-3" style="max-width: 300px; margin: auto;">
+                <option value="kjv">King James Version (KJV)</option>
+                <option value="web">World English Bible (WEB)</option>
+                <option value="asv">American Standard Version (ASV)</option>
+            </select>
+            <button id="generate-verse" class="btn btn-primary">Generate Verse</button>
+            <div id="verse-display" class="wow fadeInUp" data-wow-delay="0.5s"></div>
+        </section>
+
+        <section class="section" id="testimonials" data-anchor="testimonials">
+            <div class="container">
+                <h3 class="text-center mb-5 wow fadeIn">What Clients Say</h3>
+                <div class="row g-4">
+                    <div class="col-md-4 wow slideInLeft">
+                        <div class="card testimonial-card">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Dynamité Graphix delivered an outstanding logo that perfectly captured our brand vision. Highly recommended!"</p>
+                            <p><strong>- Business Owner, Malawi</strong></p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card project-card animate__animated animate__fadeInRight">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#digitalModal">
-                            <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="card-img-top" alt="KFC ALL STARS GHOST PEPPER" loading="lazy">
-                        </a>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Brands</h4>
-                            <p class="card-text">Creative branding designs I made for some brands.</p>
-                            <a href="https://wa.me/265994768244" target="_blank" class="btn btn-link">Contact on WhatsApp for More</a>
+                    <div class="col-md-4 wow slideInUp" data-wow-delay="0.3s">
+                        <div class="card testimonial-card">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"The flyers designed for our event were eye-catching and professional. Great attention to detail!"</p>
+                            <p><strong>- Event Organizer</strong></p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card project-card awaken-card animate__animated animate__pulse">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#awakenModal">
-                            <img src="https://i.ibb.co/SDRXcWJC/DMw-Graphix-084408.jpg" class="card-img-top" alt="I'm Awaken Album Art" loading="lazy">
-                        </a>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">I'm Awaken</h4>
-                            <p class="card-text">Artworks for my upcoming album.</p>
-                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card project-card animate__animated animate__fadeInLeft">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#techniciansModal">
-                            <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="card-img-top" alt="Technicians from MCHS LL Campus" loading="lazy">
-                        </a>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Technicians from MCHS LL Campus</h4>
-                            <p class="card-text">Custom designs created for technicians at Malawi College of Health Sciences, Lilongwe Campus.</p>
-                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card project-card animate__animated animate__fadeInRight">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#randomEditsModal">
-                            <img src="https://i.ibb.co/SDDHSG0B/dmwdp-jpg2-062624.jpg" class="card-img-top" alt="Random Photo Edits" loading="lazy">
-                        </a>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Random Photo Edits</h4>
-                            <p class="card-text">Showcasing various photos I've edited creatively.</p>
-                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card project-card special-card animate__animated animate__fadeInRight">
-                        <a href="https://drmarcus-dm.github.io/Kips-Restraunt-and-Ice-Cream-parlor-/" target="_blank">
-                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/96/8f/5c/caption.jpg?w=900&h=500&s=1" class="card-img-top" alt="Kips Restaurant and Ice Cream Parlor" loading="lazy">
-                        </a>
-                        <div class="card-body text-center">
-                            <h4 class="card-title">Kips Restaurant Website</h4>
-                            <p class="card-text">A restaurant website I designed and created. Visit to admire my work!</p>
-                            <a href="https://drmarcus-dm.github.io/Kips-Restraunt-and-Ice-Cream-parlor-/" target="_blank" class="btn btn-primary">Visit Website</a>
+                    <div class="col-md-4 wow slideInRight" data-wow-delay="0.6s">
+                        <div class="card testimonial-card">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Fantastic branding work that elevated our company's image. Creative and reliable designer."</p>
+                            <p><strong>- Brand Manager</strong></p>
                         </div>
                     </div>
                 </div>
             </div>
-            <p class="text-center mt-5">Most of my work is showcased on my Dynamité Graphix page on Facebook. Click the links above to see more!</p>
-            <p class="text-center mt-3">You can also visit and admire my work at my personal portfolio website: <a href="https://drmarcus-dm.github.io/Dumisani-Tukula-s-Portfolio-/" target="_blank">Dumisani Tukula's Portfolio</a></p>
-        </div>
-    </section>
+        </section>
 
-    <section id="bible" class="container text-center">
-        <h3 class="mb-4">Bible Verse Generator</h3>
-        <p>Generate a random Bible verse and select a translation version to view it in.</p>
-        <select id="translation-select" class="form-select mb-3" style="max-width: 300px; margin: auto;">
-            <option value="kjv">King James Version (KJV)</option>
-            <option value="web">World English Bible (WEB)</option>
-            <option value="asv">American Standard Version (ASV)</option>
-        </select>
-        <button id="generate-verse" class="btn btn-primary">Generate Verse</button>
-        <div id="verse-display"></div>
-    </section>
-
-    <section id="testimonials">
-        <div class="container">
-            <h3 class="text-center mb-5">What Clients Say</h3>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card testimonial-card">
-                        <i class="fas fa-quote-left"></i>
-                        <p>"Dynamité Graphix delivered an outstanding logo that perfectly captured our brand vision. Highly recommended!"</p>
-                        <p><strong>- Business Owner, Malawi</strong></p>
-                    </div>
+        <section class="section text-center" id="contact" data-anchor="contact">
+            <div class="container">
+                <h3 class="mb-4 wow fadeIn">Get in Touch</h3>
+                <p>Ready to collaborate? Reach out via:</p>
+                <div class="d-flex justify-content-center mb-4">
+                    <a href="mailto:dumisanitukula@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x mx-3 wow rotateIn" data-wow-delay="0.2s"></i></a>
+                    <a href="https://wa.me/265994768244" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x mx-3 wow rotateIn" data-wow-delay="0.4s"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x mx-3 wow rotateIn" data-wow-delay="0.6s"></i></a>
                 </div>
-                <div class="col-md-4">
-                    <div class="card testimonial-card">
-                        <i class="fas fa-quote-left"></i>
-                        <p>"The flyers designed for our event were eye-catching and professional. Great attention to detail!"</p>
-                        <p><strong>- Event Organizer</strong></p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card testimonial-card">
-                        <i class="fas fa-quote-left"></i>
-                        <p>"Fantastic branding work that elevated our company's image. Creative and reliable designer."</p>
-                        <p><strong>- Brand Manager</strong></p>
-                    </div>
-                </div>
+                <p>
+                    <a href="mailto:dumisanitukula@gmail.com">Email: dumisanitukula@gmail.com</a> |
+                    <a href="https://wa.me/265994768244" target="_blank">WhatsApp: +265994768244</a> |
+                    <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank">Facebook: Dynamité Graphix</a>
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="text-center">
-        <div class="container">
-            <h3 class="mb-4">Get in Touch</h3>
-            <p>Ready to collaborate? Reach out via:</p>
-            <div class="d-flex justify-content-center mb-4">
-                <a href="mailto:dumisanitukula@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x mx-3"></i></a>
-                <a href="https://wa.me/265994768244" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x mx-3"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x mx-3"></i></a>
-            </div>
-            <p>
-                <a href="mailto:dumisanitukula@gmail.com">Email: dumisanitukula@gmail.com</a> |
-                <a href="https://wa.me/265994768244" target="_blank">WhatsApp: +265994768244</a> |
-                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank">Facebook: Dynamité Graphix</a>
-            </p>
-        </div>
-    </section>
+        <footer class="section text-center" data-anchor="footer">
+            <p>Designed and Built by Dynamité Graphix &copy; 2026 | Malawi</p>
+        </footer>
+    </div>
 
-    <footer class="text-center">
-        <p>Designed and Built by Dynamité Graphix &copy; 2026 | Malawi</p>
-    </footer>
-
-    <!-- Logo Modal -->
+    <!-- Modals remain the same -->
     <div class="modal fade" id="logoModal" tabindex="-1" aria-labelledby="logoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -1171,7 +675,6 @@ body {
         </div>
     </div>
 
-    <!-- Poster Modal -->
     <div class="modal fade" id="posterModal" tabindex="-1" aria-labelledby="posterModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -1212,7 +715,6 @@ body {
         </div>
     </div>
 
-    <!-- Digital Illustration Modal -->
     <div class="modal fade" id="digitalModal" tabindex="-1" aria-labelledby="digitalModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -1238,9 +740,6 @@ body {
                             <div class="carousel-item">
                                 <img src="https://i.ibb.co/6J4z6H7j/DUJATUBRANDPHONPRO-044823.jpg" class="d-block w-100 img-fluid" alt="Dynamité Graphix flyer">
                             </div>
-                            <div class="carousel-item">
-                                <img src="https://i.ibb.co/tMFBJ6g4/KIPSMW-123155.jpg" class="d-block w-100 img-fluid" alt="Dynamité Graphix flyer">
-                            </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#digitalCarouselModal" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1256,7 +755,6 @@ body {
         </div>
     </div>
 
-    <!-- I'm Awaken Modal -->
     <div class="modal fade" id="awakenModal" tabindex="-1" aria-labelledby="awakenModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -1291,7 +789,6 @@ body {
         </div>
     </div>
 
-    <!-- Technicians from MCHS LL Campus Modal -->
     <div class="modal fade" id="techniciansModal" tabindex="-1" aria-labelledby="techniciansModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -1320,7 +817,6 @@ body {
         </div>
     </div>
 
-    <!-- Random Photo Edits Modal -->
     <div class="modal fade" id="randomEditsModal" tabindex="-1" aria-labelledby="randomEditsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -1355,7 +851,6 @@ body {
         </div>
     </div>
 
-    <!-- CV Modal -->
     <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -1378,16 +873,56 @@ body {
     <a href="#" id="back-to-top" class="btn"><i class="fas fa-arrow-up"></i></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        new fullpage('#fullpage', {
+            anchors: ['hero', 'about', 'skills', 'portfolio', 'bible', 'testimonials', 'contact', 'footer'],
+            navigation: true,
+            parallax: true,
+            parallaxOptions: { type: 'reveal', percentage: 62, property: 'translate' }
+        });
+
+        new WOW().init();
+
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.5
+        });
+
+        // Custom Cursor
+        const cursor = document.getElementById('customCursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+        document.querySelectorAll('a, button, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.classList.add('show');
+                    } else {
+                        item.classList.remove('show');
+                    }
                 });
             });
         });
 
+        // Existing scripts
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -1402,7 +937,6 @@ body {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Bible Verse Generator
         const books = ['genesis', 'exodus', 'leviticus', 'numbers', 'deuteronomy', 'joshua', 'judges', 'ruth', '1samuel', '2samuel', '1kings', '2kings', '1chronicles', '2chronicles', 'ezra', 'nehemiah', 'esther', 'job', 'psalms', 'proverbs', 'ecclesiastes', 'songofsolomon', 'isaiah', 'jeremiah', 'lamentations', 'ezekiel', 'daniel', 'hosea', 'joel', 'amos', 'obadiah', 'jonah', 'micah', 'nahum', 'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi', 'matthew', 'mark', 'luke', 'john', 'acts', 'romans', '1corinthians', '2corinthians', 'galatians', 'ephesians', 'philippians', 'colossians', '1thessalonians', '2thessalonians', '1timothy', '2timothy', 'titus', 'philemon', 'hebrews', 'james', '1peter', '2peter', '1john', '2john', '3john', 'jude', 'revelation'];
         const generateButton = document.getElementById('generate-verse');
         const translationSelect = document.getElementById('translation-select');
@@ -1410,8 +944,8 @@ body {
 
         generateButton.addEventListener('click', async () => {
             const book = books[Math.floor(Math.random() * books.length)];
-            const chapter = Math.floor(Math.random() * 28) + 1; // Rough max chapters
-            const verse = Math.floor(Math.random() * 31) + 1; // Rough max verses
+            const chapter = Math.floor(Math.random() * 28) + 1;
+            const verse = Math.floor(Math.random() * 31) + 1;
             const translation = translationSelect.value;
             const url = `https://bible-api.com/${book} ${chapter}:${verse}?translation=${translation}`;
 
@@ -1426,6 +960,15 @@ body {
             } catch (error) {
                 verseDisplay.innerHTML = '<p>Error fetching verse. Please try again later.</p>';
             }
+        });
+
+        // Fullpage nav links
+        document.querySelectorAll('.fp-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('href').substring(1);
+                fullpage_api.moveTo(target);
+            });
         });
     </script>
 </body>
