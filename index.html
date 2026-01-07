@@ -883,6 +883,27 @@ body {
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             font-size: 1.2em;
         }
+        .special-card {
+            border: 2px solid #E5B299;
+            box-shadow: 0 0 20px rgba(229, 178, 153, 0.2);
+            background-color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .special-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(229, 178, 153, 0.3);
+            border-color: #9E7777;
+        }
+        .special-card .card-title {
+            color: #7D5A50;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .special-card .card-text {
+            font-style: italic;
+            color: #555;
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
@@ -1032,6 +1053,18 @@ body {
                             <h4 class="card-title">Random Photo Edits</h4>
                             <p class="card-text">Showcasing various photos I've edited creatively.</p>
                             <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card project-card special-card animate__animated animate__fadeInRight">
+                        <a href="https://drmarcus-dm.github.io/Kips-Restraunt-and-Ice-Cream-parlor-/" target="_blank">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/96/8f/5c/caption.jpg?w=900&h=500&s=1" class="card-img-top" alt="Kips Restaurant and Ice Cream Parlor" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Kips Restaurant Website</h4>
+                            <p class="card-text">A restaurant website I designed and created. Visit to admire my work!</p>
+                            <a href="https://drmarcus-dm.github.io/Kips-Restraunt-and-Ice-Cream-parlor-/" target="_blank" class="btn btn-primary">Visit Website</a>
                         </div>
                     </div>
                 </div>
