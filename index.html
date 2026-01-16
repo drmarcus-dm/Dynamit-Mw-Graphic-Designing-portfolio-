@@ -3,235 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dynamité Graphix - Professional Graphic Designer Portfolio from Malawi. Logos, posters, album art, branding & digital illustrations.">
-    <meta name="keywords" content="graphic designer, Malawi, portfolio, logos, posters, album art, branding, digital illustration">
+    <meta name="description" content="Dynamité Graphix - Professional Graphic Designer Portfolio from Malawi. Specializing in logos, posters, and digital illustrations.">
+    <meta name="keywords" content="graphic designer, portfolio, Malawi, logos, posters, digital art">
     <meta name="author" content="Dumisani Tukula">
-    <title>Dynamité Graphix • Graphic Designer • Malawi</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Dynamité Graphix - Graphic Designer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        :root {
-            --primary-red: #CE1126;
-            --primary-green: #007A33;
-            --primary-yellow: #FCD116;
-            --text-light: #e0e0ff;
-            --card-glass: rgba(20, 20, 40, 0.48);
-            --glow-red: 0 0 30px rgba(206, 17, 38, 0.55);
-            --glow-green: 0 0 30px rgba(0, 122, 51, 0.55);
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0a0015 0%, #1a0033 50%, #000814 100%);
-            color: var(--text-light);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
         }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="12" cy="18" r="1.4" fill="white" opacity="0.65"/></svg>') repeat;
-            animation: drift 160s linear infinite;
-            opacity: 0.13;
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        @keyframes drift {
-            from { background-position: 0 0; }
-            to   { background-position: 120px 120px; }
-        }
-
         .navbar {
-            background: rgba(0,0,0,0.7) !important;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(206,17,38,0.3);
+            background-color: #000000 !important;
         }
-
         .navbar-brand, .nav-link {
             color: #fff !important;
             font-weight: 600;
-            transition: color 0.3s;
         }
-
         .nav-link:hover {
-            color: var(--primary-yellow) !important;
+            color: #FCD116 !important;
         }
-
         #hero {
-            height: 100vh;
-            min-height: 700px;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(10,0,20,0.75)), url('https://i.ibb.co/mrNgbpJV/grok-image-x9gdrkq.jpg') center/cover no-repeat;
+            background-image: url('https://i.ibb.co/mrNgbpJV/grok-image-x9gdrkq.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
+            color: #fff;
             position: relative;
         }
-
+        #hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        #hero > * {
+            position: relative;
+            z-index: 1;
+        }
         #hero h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4.2rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, var(--primary-red), var(--primary-yellow), var(--primary-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(206,17,38,0.7);
-            margin-bottom: 1.5rem;
+            font-size: 3.5em;
+            font-weight: 800;
         }
-
         #hero p {
-            font-size: 1.6rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
+            font-size: 1.8em;
+            margin: 15px 0;
         }
-
         .btn-primary {
-            background: linear-gradient(45deg, var(--primary-red), #b01020);
+            background-color: #CE1126;
             border: none;
-            padding: 16px 40px;
-            font-size: 1.3rem;
+            padding: 15px 30px;
+            font-size: 1.2em;
             font-weight: 600;
-            border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(206,17,38,0.5);
-            transition: all 0.4s ease;
+            transition: background-color 0.3s;
+            border-radius: 5px;
         }
-
         .btn-primary:hover {
-            transform: translateY(-6px) scale(1.08);
-            box-shadow: 0 15px 40px rgba(206,17,38,0.7);
-            background: linear-gradient(45deg, var(--primary-green), #006028);
+            background-color: #007A33;
         }
-
         section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
-
-        .container {
-            max-width: 1200px;
+        #about {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
         }
-
-        h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: linear-gradient(90deg, var(--primary-red), var(--primary-yellow), var(--primary-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(206,17,38,0.6);
+        #portfolio {
+            background-color: #f8f9fa;
         }
-
-        .card {
-            background: var(--card-glass);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(206,17,38,0.3);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+        .project-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #dee2e6;
         }
-
-        .card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--glow-red), var(--glow-green);
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
         }
-
-        .card-img-top {
-            height: 260px;
+        .project-card .card-img-top {
+            height: 250px;
             object-fit: cover;
-            border-bottom: 4px solid rgba(206,17,38,0.6);
-            transition: transform 0.6s ease;
         }
-
-        .card:hover .card-img-top {
-            transform: scale(1.08);
+        #contact {
+            background-color: #000000;
+            color: #fff;
         }
-
-        .card-title {
-            color: var(--primary-yellow);
-            font-weight: 700;
+        #contact a {
+            color: #FCD116;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
         }
-
-        .filter-buttons .btn {
-            background: rgba(0,122,51,0.7);
-            border: none;
-            color: white;
-            margin: 6px;
-            border-radius: 30px;
-            padding: 10px 24px;
-            transition: all 0.3s;
+        #contact a:hover {
+            text-decoration: underline;
         }
-
-        .filter-buttons .btn.active,
-        .filter-buttons .btn:hover {
-            background: var(--primary-red);
-            transform: scale(1.08);
-        }
-
-        .portfolio-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .portfolio-item.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Back to top */
-        #back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(45deg, var(--primary-red), var(--primary-green));
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-            z-index: 1000;
-            transition: all 0.3s;
-        }
-
-        #back-to-top:hover {
-            transform: scale(1.15);
-        }
-
         footer {
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(10px);
-            padding: 40px 0;
-            margin-top: 80px;
-            border-top: 1px solid rgba(206,17,38,0.3);
+            background-color: #343a40;
+            color: #fff;
+            padding: 30px 0;
+            font-size: 0.9em;
         }
-
-        @media (max-width: 992px) {
-            #hero h2 { font-size: 3.2rem; }
-            section { padding: 70px 0; }
+        @media (max-width: 768px) {
+            #hero h2 { font-size: 2.5em; }
+            #hero p { font-size: 1.4em; }
+            section { padding: 60px 0; }
+            .project-card .card-img-top { height: 200px; }
+            .portfolio-item {
+                width: 100%;
+            }
+            .card-body {
+                text-align: center;
+            }
+            .card-title, .card-text {
+                text-align: center;
+            }
         }
-
-        @media (max-width: 576px) {
-            #hero h2 { font-size: 2.6rem; }
-            .card-img-top { height: 220px; }
+        .btn-link {
+            margin: 5px;
+        }
+        img {
+            loading: lazy;
+        }
+        .modal-content {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .carousel-item img {
+            max-height: 80vh;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+        .modal-body {
+            padding: 0;
+            text-align: center;
+        }
+        .awaken-card {
+            border: 2px solid #CE1126;
+            box-shadow: 0 0 20px rgba(206,17,38,0.2);
+            background-color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .awaken-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(206,17,38,0.3);
+            border-color: #007A33;
+        }
+        .awaken-card .card-title {
+            color: #CE1126;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .awaken-card .card-text {
+            font-style: italic;
+            color: #555;
+        }
+        #awakenModal .modal-header {
+            background-color: #CE1126;
+            color: #fff;
+            border-bottom: 2px solid #CE1126;
+        }
+        #awakenModal .modal-title {
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        #awakenModal .carousel-control-prev-icon,
+        #awakenModal .carousel-control-next-icon {
+            filter: invert(1);
+        }
+        #awakenModal .carousel-item img {
+            border: 4px solid #CE1126;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.5s ease;
+        }
+        #awakenModal .carousel-item.active img {
+            transform: scale(1.02);
+        }
+        #cvModal .modal-header {
+            background-color: #CE1126;
+            color: #fff;
+            border-bottom: 2px solid #CE1126;
+        }
+        #cvModal .modal-title {
+            font-weight: 800;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        #cvModal .modal-body {
+            padding: 20px;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        #cvModal .modal-body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1200px-Flag_of_Malawi.svg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        #cvModal .modal-body > * {
+            position: relative;
+            z-index: 1;
+        }
+        #cvModal .modal-body img {
+            max-height: 80vh;
+            object-fit: contain;
+            border: 4px solid #CE1126;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #cvModal .modal-body img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        #cvModal .modal-footer {
+            border-top: 2px solid #CE1126;
+            background-color: #CE1126;
+        }
+        #cvModal .btn-primary {
+            background-color: #CE1126;
+            color: #fff;
+            font-weight: 600;
+        }
+        #cvModal .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+        .modal-dialog {
+            max-width: 90%;
+        }
+        @media (min-width: 1200px) {
+            .modal-xl {
+                max-width: 1140px;
+            }
+        }
+        #skills {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        #skills .skill-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+        }
+        #skills .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        #skills .skill-icon {
+            font-size: 3em;
+            color: #007A33;
+            margin-bottom: 15px;
+        }
+        #testimonials {
+            background-color: #f8f9fa;
+        }
+        #testimonials .testimonial-card {
+            border: none;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        #testimonials .testimonial-card i {
+            color: #FCD116;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        #techniciansModal .modal-header,
+        #randomEditsModal .modal-header,
+        .modal-header {
+            background-color: #CE1126;
+            color: #fff;
+            border-bottom: 2px solid #CE1126;
+        }
+        .modal-title {
+            font-weight: 800;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
+        }
+        .carousel-item img {
+            border: 4px solid #007A33;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .carousel-item.active img {
+            transform: scale(1.02);
+        }
+        #bible {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        #bible .btn-primary {
+            margin-top: 20px;
+        }
+        #verse-display {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-size: 1.2em;
+        }
+        /* Portfolio Grid */
+        #portfolio .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .portfolio-item {
+            flex: 1 1 250px;
+            max-width: 100%;
+        }
+        @media (max-width: 768px) {
+            .portfolio-item {
+                flex: 0 0 100%;
+            }
+            .card {
+                width: 100%;
+            }
+        }
+        /* Filter Buttons */
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .filter-btn {
+            margin: 5px;
+            background-color: #007A33;
+            color: #fff;
+        }
+        .filter-btn.active {
+            background-color: #CE1126;
+        }
+        /* Hide/Show for Filters */
+        .portfolio-item {
+            display: none;
+        }
+        .portfolio-item.show {
+            display: block;
         }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
-
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Dynamité Graphix</a>
@@ -251,156 +390,267 @@
             </div>
         </div>
     </nav>
-
-    <section id="hero">
-        <div class="container text-center">
-            <h2>DYNAMITÉ GRAPHIX</h2>
-            <p>Professional Graphic Designer from Malawi • Turning vision into visual fire</p>
-            <a href="#portfolio" class="btn btn-primary">Explore My Work</a>
-        </div>
+    <section id="hero" class="text-center">
+        <h2>Professional Graphic Designer from Malawi</h2>
+        <p>Bringing ideas to life with precision and creativity!</p>
+        <a href="#portfolio" class="btn btn-primary">View My Work</a>
     </section>
-
     <section id="skills" class="container">
-        <h3>My Skills</h3>
+        <h3 class="text-center mb-5">My Skills</h3>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card text-center p-4">
-                    <i class="fas fa-palette fa-4x mb-3" style="color: var(--primary-green);"></i>
-                    <h4>Graphic Design</h4>
-                    <p>Photoshop, Illustrator, InDesign – pixel-perfect execution.</p>
-                </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-palette skill-icon"></i>
+                <h4>Graphic Design</h4>
+                <p>Expert in Adobe Photoshop, Illustrator, and InDesign for creating professional visuals.</p>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center p-4">
-                    <i class="fas fa-draw-polygon fa-4x mb-3" style="color: var(--primary-yellow);"></i>
-                    <h4>Digital Illustration</h4>
-                    <p>Concept art, character design, storytelling visuals.</p>
-                </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-draw-polygon skill-icon"></i>
+                <h4>Digital Illustration</h4>
+                <p>Skilled in digital art tools to produce captivating illustrations and concepts.</p>
             </div>
-            <div class="col-md-4">
-                <div class="card text-center p-4">
-                    <i class="fas fa-briefcase fa-4x mb-3" style="color: var(--primary-red);"></i>
-                    <h4>Branding & Identity</h4>
-                    <p>Logos, color systems, full brand worlds.</p>
-                </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-briefcase skill-icon"></i>
+                <h4>Branding & Identity</h4>
+                <p>Developing comprehensive brand strategies and visual identities for businesses.</p>
             </div>
-            <!-- Add more if needed -->
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-ad skill-icon"></i>
+                <h4>Poster & Flyer Design</h4>
+                <p>Creating eye-catching promotional materials for events and marketing.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-music skill-icon"></i>
+                <h4>Album Art</h4>
+                <p>Designing unique album covers and music-related graphics.</p>
+            </div>
+            <div class="col-md-4 skill-card">
+                <i class="fas fa-hospital-user skill-icon"></i>
+                <h4>Specialized Projects</h4>
+                <p>Tailored designs for institutions like health sciences and education sectors.</p>
+            </div>
         </div>
     </section>
-
-    <section id="portfolio" class="container">
-        <h3>My Portfolio</h3>
-
-        <div class="filter-buttons mb-5">
-            <button class="btn filter-btn active" data-filter="all">All</button>
-            <button class="btn filter-btn" data-filter="logo">Logos</button>
-            <button class="btn filter-btn" data-filter="flyer">Flyers</button>
-            <button class="btn filter-btn" data-filter="brand">Brands</button>
-            <button class="btn filter-btn" data-filter="album">Album Art</button>
-            <button class="btn filter-btn" data-filter="technician">Technicians</button>
-            <button class="btn filter-btn" data-filter="edit">Photo Edits</button>
-            <button class="btn filter-btn" data-filter="website">Websites</button>
-        </div>
-
-        <div class="row g-4">
-            <!-- Your existing portfolio items with updated classes & structure -->
-            <div class="col-md-4 portfolio-item show logo">
-                <div class="card project-card">
-                    <a href="logo-modal.html" target="_blank">
-                        <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Designs" loading="lazy">
-                    </a>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Logo Designs</h5>
-                        <p>Custom marks that define identity.</p>
-                        <a href="logo-modal.html" target="_blank" class="btn btn-sm btn-outline-light">View Collection</a>
+    <section id="portfolio">
+        <div class="container">
+            <h3 class="text-center mb-5">My Portfolio</h3>
+            <div class="filter-buttons">
+                <button class="btn filter-btn active" data-filter="all">All</button>
+                <button class="btn filter-btn" data-filter="logo">Logos</button>
+                <button class="btn filter-btn" data-filter="flyer">Flyers</button>
+                <button class="btn filter-btn" data-filter="brand">Brands</button>
+                <button class="btn filter-btn" data-filter="album">Album Art</button>
+                <button class="btn filter-btn" data-filter="technician">Technicians</button>
+                <button class="btn filter-btn" data-filter="edit">Photo Edits</button>
+                <button class="btn filter-btn" data-filter="website">Websites</button>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 portfolio-item show logo">
+                    <div class="card project-card">
+                        <a href="logo-modal.html" target="_blank">
+                            <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Logo Designs</h4>
+                            <p class="card-text">Custom logos that represent your brand's essence, including creative real estate designs.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 portfolio-item show flyer">
+                    <div class="card project-card">
+                        <a href="poster-modal.html" target="_blank">
+                            <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="card-img-top" alt="Poster Art" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Flyers</h4>
+                            <p class="card-text">Eye-catching Flyers for events and promotions.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">Check Out on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 portfolio-item show brand">
+                    <div class="card project-card">
+                        <a href="digital-modal.html" target="_blank">
+                            <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="card-img-top" alt="KFC ALL STARS GHOST PEPPER" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Brands</h4>
+                            <p class="card-text">Creative branding designs I made for some brands.</p>
+                            <a href="https://wa.me/265994768244" target="_blank" class="btn btn-link">Contact on WhatsApp for More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 portfolio-item show album">
+                    <div class="card project-card awaken-card">
+                        <a href="awaken-modal.html" target="_blank">
+                            <img src="https://i.ibb.co/SDRXcWJC/DMw-Graphix-084408.jpg" class="card-img-top" alt="I'm Awaken Album Art" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">I'm Awaken</h4>
+                            <p class="card-text">Artworks for my upcoming album.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 portfolio-item show technician">
+                    <div class="card project-card">
+                        <a href="technicians-modal.html" target="_blank">
+                            <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="card-img-top" alt="Technicians from MCHS LL Campus" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Technicians from MCHS LL Campus</h4>
+                            <p class="card-text">Custom designs created for technicians at Malawi College of Health Sciences, Lilongwe Campus.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 portfolio-item show edit">
+                    <div class="card project-card">
+                        <a href="random-edits-modal.html" target="_blank">
+                            <img src="https://i.ibb.co/SDDHSG0B/dmwdp-jpg2-062624.jpg" class="card-img-top" alt="Random Photo Edits" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Random Photo Edits</h4>
+                            <p class="card-text">Showcasing various photos I've edited creatively.</p>
+                            <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 portfolio-item show website">
+                    <div class="card project-card">
+                        <a href="https://drmarcus-dm.github.io/Kips-Restraunt-and-Ice-Cream-parlor-/" target="_blank">
+                            <img src="https://malawitravel.org/images/KiPS.jpg" class="card-img-top" alt="Kips Restaurant" loading="lazy">
+                        </a>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Kips Restaurant Website</h4>
+                            <p class="card-text">Designed and developed website for Kips Restaurant and Ice Cream Parlor.</p>
+                            <a href="https://drmarcus-dm.github.io/Kips-Restraunt-and-Ice-Cream-parlor-/" target="_blank" class="btn btn-link">Visit Website</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Repeat similar structure for all other cards (flyer, brand, album, technician, edit, website) -->
-            <!-- ... paste your other cards here with same card class & structure ... -->
-
+            <p class="text-center mt-5">Most of my work is showcased on my Dynamité Graphix page on Facebook. Click the links above to see more!</p>
+            <p class="text-center mt-3">You can also visit and admire my work at my personal portfolio website: <a href="https://drmarcus-dm.github.io/Dumisani-Tukula-s-Portfolio-/" target="_blank">Dumisani Tukula's Portfolio</a> and my latest restaurant website: <a href="https://drmarcus-dm.github.io/Kips-Restraunt-and-Ice-Cream-parlor-/" target="_blank">Kips Restaurant</a></p>
         </div>
-
-        <p class="text-center mt-5 lead">
-            More work regularly drops on <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" style="color: var(--primary-yellow);">Facebook → Dynamité Graphix</a>
-        </p>
     </section>
-
-    <!-- Bible Verse Section (kept functional) -->
     <section id="bible" class="container text-center">
-        <h3>Bible Verse Generator</h3>
-        <p>Random inspiration from the Word</p>
-        <select id="translation-select" class="form-select mb-3 mx-auto" style="max-width: 320px;">
+        <h3 class="mb-4">Bible Verse Generator</h3>
+        <p>Generate a random Bible verse and select a translation version to view it in.</p>
+        <select id="translation-select" class="form-select mb-3" style="max-width: 300px; margin: auto;">
             <option value="kjv">King James Version (KJV)</option>
             <option value="web">World English Bible (WEB)</option>
             <option value="asv">American Standard Version (ASV)</option>
         </select>
-        <button id="generate-verse" class="btn btn-primary mb-4">Generate Verse</button>
-        <div id="verse-display" class="p-4 bg-dark bg-opacity-50 rounded shadow"></div>
+        <button id="generate-verse" class="btn btn-primary">Generate Verse</button>
+        <div id="verse-display"></div>
     </section>
-
-    <!-- Testimonials & Contact sections with glass cards -->
-
-    <!-- Footer -->
-    <footer class="text-center py-5">
-        <p class="mb-1">© 2026 Dynamité Graphix • Lilongwe, Malawi</p>
-        <p class="small">Designed & Powered by Dumisani Tukula</p>
+    <section id="testimonials">
+        <div class="container">
+            <h3 class="text-center mb-5">What Clients Say</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Dynamité Graphix delivered an outstanding logo that perfectly captured our brand vision. Highly recommended!"</p>
+                        <p><strong>- Business Owner, Malawi</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The flyers designed for our event were eye-catching and professional. Great attention to detail!"</p>
+                        <p><strong>- Event Organizer</strong></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Fantastic branding work that elevated our company's image. Creative and reliable designer."</p>
+                        <p><strong>- Brand Manager</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="text-center">
+        <div class="container">
+            <h3 class="mb-4">Get in Touch</h3>
+            <p>Ready to collaborate? Reach out via:</p>
+            <div class="d-flex justify-content-center mb-4">
+                <a href="mailto:dumisanitukula@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x mx-3"></i></a>
+                <a href="https://wa.me/265994768244" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x mx-3"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x mx-3"></i></a>
+            </div>
+            <p>
+                <a href="mailto:dumisanitukula@gmail.com">Email: dumisanitukula@gmail.com</a> |
+                <a href="https://wa.me/265994768244" target="_blank">WhatsApp: +265994768244</a> |
+                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank">Facebook: Dynamité Graphix</a>
+            </p>
+        </div>
+    </section>
+    <footer class="text-center">
+        <p>Designed and Built by Dynamité Graphix &copy; 2026 | Malawi</p>
     </footer>
-
-    <!-- Back to Top -->
+    <!-- Back to Top Button -->
     <a href="#" id="back-to-top" class="btn"><i class="fas fa-arrow-up"></i></a>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
-
-        // Back to top
         const backToTop = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
-            backToTop.style.display = window.scrollY > 300 ? 'flex' : 'none';
+            if (window.scrollY > 100) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
         });
-
-        // Portfolio filter
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
         const filterBtns = document.querySelectorAll('.filter-btn');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
-
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 const filter = btn.dataset.filter;
                 portfolioItems.forEach(item => {
-                    item.classList.toggle('show', filter === 'all' || item.classList.contains(filter));
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.classList.add('show');
+                    } else {
+                        item.classList.remove('show');
+                    }
                 });
             });
         });
-
-        // Bible verse (your original logic kept)
-        const books = ['genesis','exodus','leviticus','numbers','deuteronomy','joshua','judges','ruth','1samuel','2samuel','1kings','2kings','1chronicles','2chronicles','ezra','nehemiah','esther','job','psalms','proverbs','ecclesiastes','songofsolomon','isaiah','jeremiah','lamentations','ezekiel','daniel','hosea','joel','amos','obadiah','jonah','micah','nahum','habakkuk','zephaniah','haggai','zechariah','malachi','matthew','mark','luke','john','acts','romans','1corinthians','2corinthians','galatians','ephesians','philippians','colossians','1thessalonians','2thessalonians','1timothy','2timothy','titus','philemon','hebrews','james','1peter','2peter','1john','2john','3john','jude','revelation'];
-
-        document.getElementById('generate-verse').addEventListener('click', async () => {
+        const books = ['genesis', 'exodus', 'leviticus', 'numbers', 'deuteronomy', 'joshua', 'judges', 'ruth', '1samuel', '2samuel', '1kings', '2kings', '1chronicles', '2chronicles', 'ezra', 'nehemiah', 'esther', 'job', 'psalms', 'proverbs', 'ecclesiastes', 'songofsolomon', 'isaiah', 'jeremiah', 'lamentations', 'ezekiel', 'daniel', 'hosea', 'joel', 'amos', 'obadiah', 'jonah', 'micah', 'nahum', 'habakkuk', 'zephaniah', 'haggai', 'zechariah', 'malachi', 'matthew', 'mark', 'luke', 'john', 'acts', 'romans', '1corinthians', '2corinthians', 'galatians', 'ephesians', 'philippians', 'colossians', '1thessalonians', '2thessalonians', '1timothy', '2timothy', 'titus', 'philemon', 'hebrews', 'james', '1peter', '2peter', '1john', '2john', '3john', 'jude', 'revelation'];
+        const generateButton = document.getElementById('generate-verse');
+        const translationSelect = document.getElementById('translation-select');
+        const verseDisplay = document.getElementById('verse-display');
+        generateButton.addEventListener('click', async () => {
             const book = books[Math.floor(Math.random() * books.length)];
             const chapter = Math.floor(Math.random() * 28) + 1;
-            const verseNum = Math.floor(Math.random() * 31) + 1;
-            const translation = document.getElementById('translation-select').value;
-            const url = `https://bible-api.com/${book} ${chapter}:${verseNum}?translation=${translation}`;
-
+            const verse = Math.floor(Math.random() * 31) + 1;
+            const translation = translationSelect.value;
+            const url = `https://bible-api.com/${book} ${chapter}:${verse}?translation=${translation}`;
             try {
-                const res = await fetch(url);
-                const data = await res.json();
-                document.getElementById('verse-display').innerHTML = data.error
-                    ? '<p class="text-danger">Verse not found. Try again!</p>'
-                    : `<strong>${data.reference} (${translation.toUpperCase()})</strong><br><em>${data.text}</em>`;
-            } catch {
-                document.getElementById('verse-display').innerHTML = '<p class="text-warning">Error loading verse. Check connection.</p>';
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.error) {
+                    verseDisplay.innerHTML = '<p>Verse not found. Try again!</p>';
+                } else {
+                    verseDisplay.innerHTML = `<strong>${data.reference}</strong><br>${data.text}`;
+                }
+            } catch (error) {
+                verseDisplay.innerHTML = '<p>Error fetching verse. Please try again later.</p>';
             }
         });
     </script>
